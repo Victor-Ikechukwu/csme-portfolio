@@ -3,19 +3,31 @@
 This is a static, responsive academic portfolio website for Dr. Agughasi Victor Ikechukwu.
 
 ## Files
-- `index.html` — main website
-- `styles.css` — visual styling
-- `script.js` — mobile menu, reveal animations, active navigation
-- `assets/profile.png` — professional profile image
-- `assets/csme-logo.png` — department logo
-- `assets/Dr_Victor_Agughasi_CV.pdf` — downloadable CV
+- `index.html` - main website
+- `styles.css` - visual styling
+- `script.js` - mobile menu, reveal animations, and active navigation
+- `assets/profile.png` - professional profile image
+- `assets/csme-logo.png` - department logo
+- `assets/Dr_Victor_Agughasi_CV.pdf` - downloadable CV
 
-## How to use
-Open `index.html` directly in a browser, or upload the full folder to GitHub Pages, Netlify, Vercel, cPanel, or any standard static hosting platform.
+## Deployment
 
-## Recommended deployment via GitHub Pages
-1. Create a new GitHub repository.
-2. Upload all files in this folder.
-3. Go to Settings → Pages.
-4. Select the main branch and root folder.
-5. Save and wait for GitHub to publish the site.
+This site is fully static, so it can be deployed directly to Netlify with no build command.
+
+- Publish directory: `.`
+- Build command: leave empty
+
+You can deploy by either:
+
+1. Dragging the whole folder into Netlify Drop.
+2. Connecting the GitHub repository to Netlify and keeping the publish directory as the project root.
+
+## Local preview
+
+Run a simple static server from the project root:
+
+```powershell
+python -m http.server 4173
+```
+
+Then open `http://127.0.0.1:4173`.
