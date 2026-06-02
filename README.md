@@ -115,4 +115,14 @@ To adapt this portfolio for future updates:
 
 ## License
 
-This project is intended for portfolio and academic presentation use. Update the content and licensing terms as needed for public reuse.
+## License and Usage
+
+© 2026 Dr. Victor Ikechukwu Agughasi. All rights reserved.
+
+This website is created for personal academic, professional, and portfolio presentation purposes.
+
+The personal content on this website, including the biography, CV, photographs, academic profile, achievements, grants, patents, publications list, and institutional references, may not be copied, reproduced, modified, or redistributed without prior written permission.
+
+The institutional names, logos, and affiliations displayed on this website are used only for identification and academic representation purposes. All related trademarks, logos, and institutional identities remain the property of their respective owners.
+
+The website structure and code may be used as inspiration for academic portfolio development, but direct reuse of personal content, images, logos, or documents is strictly prohibited.
