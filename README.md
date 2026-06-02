@@ -50,7 +50,7 @@ csme-portfolio/
 |-- assets/
 |   |-- csme-logo.png
 |   |-- profile.png
-|   `-- Dr_Victor_Agughasi_CV.pdf
+|   `-- Dr_Victor_Agughasi_DSU_ATS_CV.pdf
 |-- index.html
 |-- styles.css
 |-- script.js
