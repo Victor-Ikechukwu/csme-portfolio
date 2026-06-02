@@ -1,6 +1,6 @@
 <div align="center">
 
-# Dr. Victor Agughasi Academic Portfolio
+# Welcome to the official Academic Portfolio of Dr. Agughasi Victor Ikechukwu
 
 Responsive academic portfolio website for **Dr. Agughasi Victor Ikechukwu**, built as a clean static site for research visibility, academic outreach, and straightforward Netlify deployment.
 
