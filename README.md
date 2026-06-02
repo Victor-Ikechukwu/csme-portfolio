@@ -113,7 +113,6 @@ To adapt this portfolio for future updates:
 - Reliable deployment on static hosting platforms
 - Simple repo structure for long-term maintenance
 
-## License
 
 ## License and Usage
 
