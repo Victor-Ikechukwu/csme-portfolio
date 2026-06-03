@@ -519,6 +519,11 @@ def build():
     section_heading(doc, "Workshops, FDPs, Resource Person Roles and Training")
     bullet(
         doc,
+        "2026: ",
+        "Jan 2026 ATAL FDP on \"Artificial Intelligence: Insights and Applications\", organized by the Department of CSE-AI.",
+    )
+    bullet(
+        doc,
         "2025: ",
         "FDP on \"AI in Medical Imaging and Diagnostics: Current Trends and Challenges\", E&ICT Academy, NIT Patna with IIITDM Jabalpur, IIT Guwahati, MNIT Jaipur, IIT Kanpur, IIT Roorkee, supported by MeitY.",
     )
