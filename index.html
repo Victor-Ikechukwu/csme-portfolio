@@ -58,6 +58,7 @@
         <a href="#achievements">Achievements</a>
         <a href="#publications">Publications</a>
         <a href="#teaching">Teaching</a>
+        <a href="#appreciation">Appreciation</a>
         <a href="#contact">Contact</a>
       </div>
     </nav>
@@ -75,7 +76,7 @@
           </p>
           <div class="hero-actions">
             <a class="btn primary" href="assets/Dr_Victor_Agughasi_DSU_ATS_CV.pdf" download>Download CV</a>
-            <a class="btn secondary" href="mailto:victor-csme@dsu.edu.in">Contact Me</a>
+            <a class="btn secondary" href="#appreciation">Open Memory Wall</a>
           </div>
           <div class="social-strip" aria-label="Academic profile links">
             <a href="https://scholar.google.com/citations?user=TQjqJ1UAAAAJ&hl=en" target="_blank" rel="noopener">Google Scholar</a>
@@ -360,6 +361,156 @@
       </div>
     </section>
 
+    <section class="section-pad appreciation-section" id="appreciation">
+      <div class="container">
+        <div class="section-heading centered reveal">
+          <p class="eyebrow">Digital Testimony</p>
+          <h2>A living wall of gratitude, memories, and shared moments.</h2>
+          <p>Students, mentees, collaborators, and friends can leave a note of appreciation here, add photos, attach a short video, and help preserve the journey for years to come.</p>
+        </div>
+
+        <div class="appreciation-layout">
+          <article class="memory-intro reveal">
+            <span class="memory-badge">For life, in one place</span>
+            <h3>Leave a memory that can still be felt years from now.</h3>
+            <p>
+              If Dr. Victor has guided you, inspired your project, encouraged your research, or simply made a lasting impact on your time at MIT Mysore or beyond, this page is your space to say it in your own words.
+            </p>
+            <div class="memory-points">
+              <div>
+                <strong>Write freely</strong>
+                <span>Share a heartfelt message, a defining classroom moment, or a thank-you that deserves to be remembered.</span>
+              </div>
+              <div>
+                <strong>Add media</strong>
+                <span>Attach up to three images and one short video to help bring the memory to life.</span>
+              </div>
+              <div>
+                <strong>Publish publicly</strong>
+                <span>Verified submissions appear in the memory wall below for visitors around the world to see.</span>
+              </div>
+            </div>
+            <p class="portal-note">
+              Please keep uploads under 8 MB in total and use the portal only for content you are comfortable sharing publicly.
+            </p>
+          </article>
+
+          <article class="memory-form-card reveal delay-1">
+            <div class="memory-form-head">
+              <p class="eyebrow">Submit a memory</p>
+              <h3>Post your appreciation</h3>
+            </div>
+
+            <form
+              class="appreciation-form"
+              name="student-appreciation"
+              method="POST"
+              enctype="multipart/form-data"
+              data-netlify="true"
+              data-netlify-honeypot="bot-field"
+              data-appreciation-form
+            >
+              <input type="hidden" name="form-name" value="student-appreciation" />
+              <p class="hidden-field">
+                <label>Do not fill this out if you are human: <input name="bot-field" /></label>
+              </p>
+
+              <div class="form-grid">
+                <label class="field">
+                  <span>Your name</span>
+                  <input type="text" name="name" placeholder="Your full name" required />
+                </label>
+                <label class="field">
+                  <span>Email address</span>
+                  <input type="email" name="email" placeholder="Optional, for follow-up" />
+                </label>
+                <label class="field">
+                  <span>Headline</span>
+                  <input type="text" name="headline" maxlength="90" placeholder="A short title for your memory" required />
+                </label>
+                <label class="field">
+                  <span>Batch / Year / Class</span>
+                  <input type="text" name="batch" maxlength="80" placeholder="Example: AIML 2024 batch" />
+                </label>
+                <label class="field">
+                  <span>Your connection</span>
+                  <select name="relationship" required>
+                    <option value="">Select one</option>
+                    <option>Student</option>
+                    <option>Mentee</option>
+                    <option>Project team member</option>
+                    <option>Research scholar</option>
+                    <option>Colleague</option>
+                    <option>Friend</option>
+                  </select>
+                </label>
+                <label class="field">
+                  <span>Place or context</span>
+                  <input type="text" name="memory_place" maxlength="100" placeholder="MIT Mysore, project lab, workshop..." />
+                </label>
+              </div>
+
+              <label class="field">
+                <span>Your message</span>
+                <textarea name="message" rows="6" maxlength="1800" placeholder="Share your appreciation, a memory, or the impact Dr. Victor made on your journey." required></textarea>
+              </label>
+
+              <div class="upload-grid">
+                <label class="field upload-field">
+                  <span>Photo 1</span>
+                  <input type="file" name="photo_1" accept="image/*" data-media-input />
+                </label>
+                <label class="field upload-field">
+                  <span>Photo 2</span>
+                  <input type="file" name="photo_2" accept="image/*" data-media-input />
+                </label>
+                <label class="field upload-field">
+                  <span>Photo 3</span>
+                  <input type="file" name="photo_3" accept="image/*" data-media-input />
+                </label>
+                <label class="field upload-field">
+                  <span>Short video</span>
+                  <input type="file" name="video_1" accept="video/*" data-media-input />
+                </label>
+              </div>
+
+              <div class="media-preview" data-media-preview aria-live="polite"></div>
+
+              <label class="consent-row">
+                <input type="checkbox" name="consent_public" value="yes" required />
+                <span>I consent to this message and any attached media being displayed publicly on this website.</span>
+              </label>
+
+              <div class="form-footer">
+                <p class="form-help">Netlify accepts one upload per field, so this portal supports three images and one video per post.</p>
+                <button class="btn primary" type="submit">Publish appreciation</button>
+              </div>
+
+              <p class="form-status" data-form-status aria-live="polite"></p>
+            </form>
+          </article>
+        </div>
+
+        <div class="memory-wall reveal delay-2">
+          <div class="memory-wall-head">
+            <div>
+              <p class="eyebrow">Public memory wall</p>
+              <h3>Messages already shared</h3>
+            </div>
+            <p>Every verified note becomes part of this digital testimony.</p>
+          </div>
+
+          <div class="memory-feedback" data-memory-feedback>
+            <p class="memory-state" data-memory-loading>Loading memories...</p>
+            <p class="memory-state hidden" data-memory-empty>No public appreciations have been published yet. Be the first to add one.</p>
+            <p class="memory-state hidden" data-memory-error></p>
+          </div>
+
+          <div class="memory-grid" data-memory-grid aria-live="polite"></div>
+        </div>
+      </div>
+    </section>
+
     <section class="section-pad contact-section" id="contact">
       <div class="container contact-card reveal">
         <div>
@@ -382,6 +533,18 @@
       <a href="#top">Back to top &uarr;</a>
     </div>
   </footer>
+
+  <div class="lightbox hidden" data-lightbox aria-hidden="true">
+    <button class="lightbox-close" type="button" data-lightbox-close aria-label="Close media viewer">&times;</button>
+    <div class="lightbox-dialog" role="dialog" aria-modal="true" aria-label="Memory media viewer">
+      <div class="lightbox-media" data-lightbox-media></div>
+      <div class="lightbox-copy">
+        <p class="eyebrow">Memory preview</p>
+        <h3 data-lightbox-title></h3>
+        <p data-lightbox-caption></p>
+      </div>
+    </div>
+  </div>
 
   <script src="script.js"></script>
 </body>

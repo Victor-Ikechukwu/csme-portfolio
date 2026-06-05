@@ -31,6 +31,8 @@ The project uses plain HTML, CSS, and JavaScript, making it easy to maintain, fa
 - Sticky navigation with active section highlighting
 - Clean hero section with profile and institution card
 - Research, publications, achievements, and teaching sections
+- Public appreciation portal with text, image, and short-video submissions
+- Memory wall powered by Netlify Forms plus a serverless gallery endpoint
 - Downloadable CV and direct contact actions
 - Static hosting friendly setup with Netlify configuration included
 
@@ -42,6 +44,7 @@ The project uses plain HTML, CSS, and JavaScript, making it easy to maintain, fa
 | Styling | `CSS3` |
 | Interactivity | `Vanilla JavaScript` |
 | Hosting | `Netlify` or any static host |
+| Public submission gallery | `Netlify Forms` + `Netlify Functions` |
 
 ## Project Structure
 
@@ -54,6 +57,9 @@ csme-portfolio/
 |-- index.html
 |-- styles.css
 |-- script.js
+|-- netlify/
+|   `-- functions/
+|       `-- appreciations.js
 |-- netlify.toml
 `-- README.md
 ```
@@ -95,6 +101,71 @@ This site is fully static, so no build step is required.
 | Publish directory | `.` |
 
 The included `netlify.toml` already reflects the correct publish directory.
+
+## Appreciation Portal Setup
+
+The new appreciation portal uses:
+
+- A Netlify HTML form named `student-appreciation` for public submissions
+- Built-in Netlify file uploads for up to 3 images and 1 short video
+- A serverless function at `/api/appreciations` that reads verified submissions and renders the public memory wall
+
+### Required Netlify configuration
+
+Add this environment variable in your Netlify site settings:
+
+```text
+NETLIFY_AUTH_TOKEN=your_personal_access_token
+```
+
+Optional environment variables:
+
+```text
+NETLIFY_SITE_ID=your-site-id-or-site-domain
+NETLIFY_APPRECIATION_FORM_NAME=student-appreciation
+```
+
+Notes:
+
+- If `NETLIFY_SITE_ID` is omitted, the function will fall back to Netlify's runtime `SITE_ID` when available.
+- The function only returns verified submissions, which means Netlify's spam filtering gives you a basic moderation layer out of the box.
+
+### Form detection
+
+In the Netlify dashboard:
+
+1. Go to `Forms`.
+2. Enable form detection if it is currently disabled.
+3. Redeploy the site after enabling it.
+
+### Upload limits
+
+Netlify Forms currently supports:
+
+- One file per file field
+- A maximum request size of `8 MB`
+- File uploads that should complete within `30 seconds`
+
+This is why the portal is structured as:
+
+- `photo_1`
+- `photo_2`
+- `photo_3`
+- `video_1`
+
+### Local development with functions
+
+To test the appreciation wall locally with functions enabled, use Netlify Dev:
+
+```powershell
+npx netlify dev
+```
+
+Then open:
+
+```text
+http://127.0.0.1:8888
+```
 
 ## Customization
 
