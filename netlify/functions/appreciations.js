@@ -1,6 +1,10 @@
 const FORM_NAME = process.env.NETLIFY_APPRECIATION_FORM_NAME || 'student-appreciation';
 const SITE_ID = process.env.NETLIFY_SITE_ID || process.env.SITE_ID || '';
 const AUTH_TOKEN = process.env.NETLIFY_AUTH_TOKEN || '';
+const MEDIA_FIELDS = ['photo_1', 'photo_2', 'photo_3', 'video_1'];
+const MEDIA_URL_PATTERN = /https?:\/\/[^\s"'<>]+/gi;
+const IMAGE_URL_PATTERN = /\.(apng|avif|bmp|gif|heic|heif|jpe?g|png|svg|webp)(\?|$)/i;
+const VIDEO_URL_PATTERN = /\.(mp4|mov|m4v|ogg|ogv|webm)(\?|$)/i;
 
 const json = (statusCode, body, extraHeaders = {}) => ({
   statusCode,
@@ -30,27 +34,68 @@ const fetchJson = async url => {
 
 const inferMediaKind = value => {
   const lower = String(value || '').toLowerCase();
-  if (/\.(mp4|mov|webm|m4v|ogg)(\?|$)/.test(lower)) {
+  if (VIDEO_URL_PATTERN.test(lower)) {
     return 'video';
   }
   return 'image';
 };
 
-const getMediaItems = data => {
-  const mediaFields = ['photo_1', 'photo_2', 'photo_3', 'video_1'];
+const normalizePotentialUrl = value => {
+  const trimmed = String(value || '').trim();
+  if (!trimmed) return [];
 
-  return mediaFields.flatMap(fieldName => {
-    const rawValue = data[fieldName];
+  const matches = trimmed.match(MEDIA_URL_PATTERN) || [];
+  const candidates = matches.length ? matches : [trimmed];
+
+  return candidates.filter(candidate => IMAGE_URL_PATTERN.test(candidate) || VIDEO_URL_PATTERN.test(candidate));
+};
+
+const extractMediaUrls = value => {
+  if (!value) return [];
+
+  if (typeof value === 'string') {
+    return normalizePotentialUrl(value);
+  }
+
+  if (Array.isArray(value)) {
+    return value.flatMap(extractMediaUrls);
+  }
+
+  if (typeof value === 'object') {
+    const directCandidates = ['url', 'href', 'src', 'value', 'secure_url']
+      .flatMap(key => normalizePotentialUrl(value[key]));
+
+    return [
+      ...directCandidates,
+      ...Object.values(value).flatMap(extractMediaUrls)
+    ];
+  }
+
+  return [];
+};
+
+const getFieldValue = (submission, fieldName) => {
+  const dataValue = submission.data?.[fieldName];
+  if (dataValue) return dataValue;
+
+  const orderedField = Array.isArray(submission.ordered_human_fields)
+    ? submission.ordered_human_fields.find(field => field?.name === fieldName || field?.title === fieldName)
+    : null;
+
+  return orderedField?.value || orderedField;
+};
+
+const getMediaItems = submission => {
+  return MEDIA_FIELDS.flatMap(fieldName => {
+    const rawValue = getFieldValue(submission, fieldName);
     if (!rawValue) return [];
 
-    const values = Array.isArray(rawValue) ? rawValue : [rawValue];
+    const urls = [...new Set(extractMediaUrls(rawValue))];
 
-    return values
-      .filter(value => typeof value === 'string' && value.trim())
-      .map(value => ({
-        kind: fieldName.startsWith('video') ? 'video' : inferMediaKind(value),
-        url: value
-      }));
+    return urls.map(url => ({
+      kind: fieldName.startsWith('video') ? 'video' : inferMediaKind(url),
+      url
+    }));
   });
 };
 
@@ -66,7 +111,7 @@ const normalizeEntry = submission => {
     relationship: data.relationship || '',
     memoryPlace: data.memory_place || '',
     message: data.message || submission.body || submission.summary || '',
-    media: getMediaItems(data)
+    media: getMediaItems(submission)
   };
 };
 
