@@ -404,8 +404,10 @@
             <form
               class="appreciation-form"
               name="student-appreciation"
+              action="/"
               method="POST"
               enctype="multipart/form-data"
+              netlify
               data-netlify="true"
               data-netlify-honeypot="bot-field"
               data-appreciation-form
@@ -490,6 +492,37 @@
             </form>
           </article>
         </div>
+
+        <section class="drive-share reveal delay-2" aria-labelledby="drive-share-title">
+          <div class="drive-share-copy">
+            <p class="eyebrow">Large File Sharing</p>
+            <h3 id="drive-share-title">Have a full video, an event album, or a larger archive to share?</h3>
+            <p>
+              If your tribute includes longer recordings, large batches of photographs, certificates, scanned memories, or files that go beyond the upload limit above, please use the shared Google Drive folder below.
+            </p>
+            <p>
+              You can upload directly there and still post a short appreciation on this page so the public memory wall carries your message while the full media stays safely in one place.
+            </p>
+          </div>
+
+          <aside class="drive-share-card" aria-label="Google Drive upload option">
+            <span class="drive-share-badge">Best for large videos and folders</span>
+            <ul class="drive-share-list">
+              <li>Upload long videos, multiple photos, and larger files without size pressure.</li>
+              <li>Name your files or folders with your name, class, or batch for easier identification.</li>
+              <li>Use the appreciation form above as the public note, and Google Drive as the full archive.</li>
+            </ul>
+            <a
+              class="btn primary drive-share-link"
+              href="https://drive.google.com/drive/folders/1gpqrk9WKei1q4uIv2ijzWXWO1vQawtdc?usp=sharing"
+              target="_blank"
+              rel="noopener"
+            >
+              Open the shared Google Drive folder
+            </a>
+            <p class="drive-share-note">If the form upload feels too limited, this is the recommended place for richer memories and large media collections.</p>
+          </aside>
+        </section>
 
         <div class="memory-wall reveal delay-2">
           <div class="memory-wall-head">

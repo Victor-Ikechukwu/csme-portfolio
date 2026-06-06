@@ -78,6 +78,30 @@ const setFormStatus = (message = '', state = '') => {
   }
 };
 
+const getSubmissionErrorMessage = response => {
+  if (!response) {
+    return 'Something went wrong while sending your appreciation.';
+  }
+
+  if (response.status === 404) {
+    return 'This Netlify deployment is not accepting form submissions yet. Enable Netlify form detection in the site dashboard, redeploy, and try again.';
+  }
+
+  if (response.status === 413) {
+    return 'The upload is too large for Netlify Forms. Please keep the total media size under 8 MB.';
+  }
+
+  if (response.status === 422) {
+    return 'Netlify rejected the submission. Please check the required fields and try again.';
+  }
+
+  if (response.status >= 500) {
+    return 'The server could not accept the submission right now. Please try again in a moment.';
+  }
+
+  return 'Submission failed. Please try again in a moment.';
+};
+
 const clearPreviewUrls = () => {
   previewUrls.forEach(url => URL.revokeObjectURL(url));
   previewUrls.clear();
@@ -244,7 +268,7 @@ const renderMemories = entries => {
     authorName.textContent = escapeText(entry.name) || 'Anonymous';
     author.append(authorName);
 
-    const authorSubline = [entry.relationship, entry.batch].filter(Boolean).join(' • ');
+    const authorSubline = [entry.relationship, entry.batch].filter(Boolean).join(' | ');
     if (authorSubline) {
       const authorMeta = document.createElement('span');
       authorMeta.textContent = authorSubline;
@@ -365,7 +389,7 @@ if (appreciationForm) {
       });
 
       if (!response.ok) {
-        throw new Error('Submission failed. Please try again in a moment.');
+        throw new Error(getSubmissionErrorMessage(response));
       }
 
       appreciationForm.reset();

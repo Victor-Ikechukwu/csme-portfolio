@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Netlify Form Blueprint</title>
+</head>
+<body>
+  <form
+    name="student-appreciation"
+    action="/"
+    method="POST"
+    enctype="multipart/form-data"
+    netlify
+    data-netlify="true"
+    data-netlify-honeypot="bot-field"
+    hidden
+  >
+    <input type="hidden" name="form-name" value="student-appreciation" />
+    <input type="text" name="bot-field" />
+    <input type="text" name="name" />
+    <input type="email" name="email" />
+    <input type="text" name="headline" />
+    <input type="text" name="batch" />
+    <input type="text" name="relationship" />
+    <input type="text" name="memory_place" />
+    <textarea name="message"></textarea>
+    <input type="checkbox" name="consent_public" value="yes" />
+    <input type="file" name="photo_1" />
+    <input type="file" name="photo_2" />
+    <input type="file" name="photo_3" />
+    <input type="file" name="video_1" />
+  </form>
+</body>
+</html>
