@@ -45,9 +45,8 @@ const normalizePotentialUrl = value => {
   if (!trimmed) return [];
 
   const matches = trimmed.match(MEDIA_URL_PATTERN) || [];
-  const candidates = matches.length ? matches : [trimmed];
 
-  return candidates.filter(candidate => IMAGE_URL_PATTERN.test(candidate) || VIDEO_URL_PATTERN.test(candidate));
+  return matches.filter(candidate => IMAGE_URL_PATTERN.test(candidate) || VIDEO_URL_PATTERN.test(candidate));
 };
 
 const extractMediaUrls = value => {

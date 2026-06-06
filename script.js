@@ -167,6 +167,8 @@ const formatDate = isoDate => {
 
 const escapeText = value => (value || '').trim();
 
+const isRenderableMediaUrl = url => /^https?:\/\//i.test(String(url || ''));
+
 const setMemoryState = ({ loading = false, empty = false, error = '' } = {}) => {
   if (memoryLoading) memoryLoading.classList.toggle('hidden', !loading);
   if (memoryEmpty) memoryEmpty.classList.toggle('hidden', !empty);
@@ -183,16 +185,27 @@ const createMediaButton = (item, title, author) => {
   button.dataset.mediaKind = item.kind;
 
   if (item.kind === 'video') {
-    const video = document.createElement('video');
-    video.src = item.url;
-    video.muted = true;
-    video.playsInline = true;
-    video.preload = 'metadata';
-    button.append(video);
+    const videoPlaceholder = document.createElement('div');
+    videoPlaceholder.className = 'memory-video-placeholder';
+
+    const playMark = document.createElement('span');
+    playMark.setAttribute('aria-hidden', 'true');
+    playMark.textContent = 'Play';
+
+    const videoLabel = document.createElement('strong');
+    videoLabel.textContent = 'Video memory';
+
+    videoPlaceholder.append(playMark, videoLabel);
+    button.append(videoPlaceholder);
   } else {
     const image = document.createElement('img');
     image.src = item.url;
     image.alt = title || `Memory shared by ${author}`;
+    image.loading = 'lazy';
+    image.decoding = 'async';
+    image.addEventListener('error', () => {
+      button.hidden = true;
+    });
     button.append(image);
   }
 
@@ -280,10 +293,14 @@ const renderMemories = entries => {
 
     card.append(header, author, message);
 
-    if (entry.media.length) {
+    const mediaItems = Array.isArray(entry.media)
+      ? entry.media.filter(item => isRenderableMediaUrl(item.url))
+      : [];
+
+    if (mediaItems.length) {
       const mediaGridEl = document.createElement('div');
       mediaGridEl.className = 'memory-media-grid';
-      entry.media.forEach(item => {
+      mediaItems.forEach(item => {
         mediaGridEl.append(createMediaButton(item, entry.headline, entry.name));
       });
       card.append(mediaGridEl);
@@ -337,7 +354,12 @@ const openLightbox = media => {
     video.controls = true;
     video.autoplay = true;
     video.playsInline = true;
+    video.preload = 'metadata';
     lightboxMedia.append(video);
+    const playPromise = video.play();
+    if (playPromise) {
+      playPromise.catch(() => {});
+    }
   } else {
     const image = document.createElement('img');
     image.src = media.url;

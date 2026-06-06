@@ -757,18 +757,54 @@ li { margin-bottom: .45rem; }
   position: relative;
   padding: 0;
   border: 0;
-  background: transparent;
+  background: #eef6f8;
   cursor: pointer;
   border-radius: 16px;
   overflow: hidden;
 }
 .memory-media-button img,
-.memory-media-button video {
+.memory-video-placeholder {
   width: 100%;
   aspect-ratio: 1 / 1;
-  object-fit: cover;
   border-radius: 16px;
   border: 1px solid var(--line);
+}
+.memory-media-button img {
+  object-fit: cover;
+}
+.memory-video-placeholder {
+  display: grid;
+  place-items: center;
+  gap: .55rem;
+  padding: 1rem;
+  background:
+    linear-gradient(135deg, rgba(5, 41, 92, .92), rgba(0, 138, 145, .86)),
+    var(--navy);
+  color: #fff;
+  text-align: center;
+}
+.memory-video-placeholder span {
+  display: grid;
+  place-items: center;
+  width: 54px;
+  height: 54px;
+  border-radius: 50%;
+  background: rgba(255,255,255,.16);
+  color: #fff;
+  font-size: 0;
+}
+.memory-video-placeholder span::before {
+  content: "";
+  width: 0;
+  height: 0;
+  margin-left: 4px;
+  border-top: 11px solid transparent;
+  border-bottom: 11px solid transparent;
+  border-left: 17px solid #fff;
+}
+.memory-video-placeholder strong {
+  color: #fff;
+  font-size: .95rem;
 }
 .memory-media-button::after {
   content: "View";
