@@ -486,6 +486,9 @@ h3 {
 
 .hero-card {
   position: relative;
+  display: grid;
+  gap: 1rem;
+  align-content: start;
 }
 
 .portrait-shell {
@@ -530,13 +533,12 @@ body[data-theme="dark"] .portrait-shell {
 }
 
 .profile-card {
-  position: absolute;
-  left: 26px;
-  right: 26px;
-  bottom: 92px;
+  position: relative;
+  z-index: 2;
   display: flex;
   align-items: center;
   gap: 0.9rem;
+  margin: -92px 26px 0;
   padding: 1rem;
   border-radius: 20px;
   background: color-mix(in srgb, var(--surface-strong) 88%, transparent);
@@ -569,7 +571,6 @@ body[data-theme="dark"] .portrait-shell {
 }
 
 .hero-note {
-  margin-top: 1rem;
   padding: 1rem 1.1rem;
   border-radius: 22px;
   background: linear-gradient(135deg, color-mix(in srgb, var(--surface-strong) 80%, transparent), color-mix(in srgb, var(--accent-soft) 80%, transparent));
@@ -1617,8 +1618,7 @@ li {
   }
 
   .profile-card {
-    position: static;
-    margin-top: 1rem;
+    margin: -76px 22px 0;
   }
 
   .stats-bar {
@@ -1725,6 +1725,10 @@ li {
     text-align: center;
   }
 
+  .profile-card {
+    margin: -54px 16px 0;
+  }
+
   .timeline::before {
     display: none;
   }
@@ -1781,6 +1785,10 @@ li {
 
   .portrait-shell {
     transform: none;
+  }
+
+  .profile-card {
+    margin: -40px 12px 0;
   }
 
   .content-block p,
