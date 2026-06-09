@@ -57,6 +57,12 @@ python -m venv .venv
 .\.venv\Scripts\pelican.exe content -o output -s pelicanconf.py
 ```
 
+You can also use the deployment-ready build script:
+
+```powershell
+bash build.sh
+```
+
 4. Preview the generated site:
 
 ```powershell
@@ -79,6 +85,24 @@ The appreciation wall is curated manually.
 2. Upload any approved media into `content/assets/` if needed.
 3. Add the published record to `content/data/appreciations.json`.
 4. Rebuild and deploy the site.
+
+Helper files included:
+
+- intake checklist: `content/data/appreciation-intake-template.md`
+- CLI helper: `tools/add_appreciation.py`
+
+Example usage:
+
+```powershell
+python tools/add_appreciation.py ^
+  --name "Full Name" ^
+  --headline "A short title" ^
+  --message "Public appreciation text" ^
+  --created-at 2026-06-09 ^
+  --relationship "Student" ^
+  --batch "AIML 2024" ^
+  --memory-place "DSU Research Lab"
+```
 
 ### Appreciation data format
 
@@ -106,7 +130,7 @@ Use these settings in Cloudflare Pages:
 - Build command:
 
 ```text
-python -m pip install -r requirements.txt && pelican content -o output -s publishconf.py
+bash build.sh
 ```
 
 - Build output directory:
@@ -114,6 +138,14 @@ python -m pip install -r requirements.txt && pelican content -o output -s publis
 ```text
 output
 ```
+
+Optional helper file already included:
+
+```text
+wrangler.toml
+```
+
+It sets the Pages build output directory to `output`.
 
 Why this is the primary recommendation:
 
