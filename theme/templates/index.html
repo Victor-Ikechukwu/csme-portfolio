@@ -460,29 +460,41 @@
 
           <article class="memory-form-card reveal delay-1">
             <div class="memory-form-head">
-              <p class="eyebrow">How to contribute</p>
-              <h3>Send your appreciation for curation</h3>
+              <p class="eyebrow">Leave a message</p>
+              <h3>Share your appreciation in one simple step.</h3>
             </div>
-            <div class="submission-steps">
-              <div class="submission-step">
-                <strong>1. Email your note</strong>
-                <p>Send your appreciation message to either the institute email or the personal email below. Include your name, relationship, batch or year, and the message you want published.</p>
+            <p class="submission-intro">
+              The easiest experience is a short appreciation form. Share your name, relationship, and heartfelt note there. Photos or video memories can still be uploaded separately if you want them included in the public wall.
+            </p>
+            <div class="submission-quickstart">
+              <div class="submission-actions">
+                {% if GOOGLE_FORM_URL %}
+                <a class="btn primary" href="{{ GOOGLE_FORM_URL }}" target="_blank" rel="noopener">Open appreciation form</a>
+                {% else %}
+                <a class="btn primary" href="mailto:{{ INSTITUTE_EMAIL }}?subject=Appreciation%20for%20Dr.%20Victor%20Agughasi">Send a quick note by email</a>
+                {% endif %}
+                <a class="btn secondary" href="{{ GOOGLE_DRIVE_URL }}" target="_blank" rel="noopener">Upload photos or videos</a>
+                <a class="btn tertiary" href="mailto:{{ PERSONAL_EMAIL }}">Use personal email instead</a>
               </div>
-              <div class="submission-step">
-                <strong>2. Share optional media</strong>
-                <p>If you have photos or videos, upload them to the shared Google Drive folder. Mention the folder or filenames in your email so they can be matched during curation.</p>
-              </div>
-              <div class="submission-step">
-                <strong>3. Review and publish</strong>
-                <p>Approved entries are added to the repository data and published in the next static deploy, without depending on any subscription-based form service.</p>
+              <div class="submission-hints" aria-label="Suggested form fields">
+                <span>Name and relationship</span>
+                <span>Your message</span>
+                <span>Optional photos or video</span>
               </div>
             </div>
-            <div class="submission-actions">
-              <a class="btn primary" href="mailto:{{ INSTITUTE_EMAIL }}">Email institute address</a>
-              <a class="btn secondary" href="mailto:{{ PERSONAL_EMAIL }}">Email personal address</a>
-              <a class="btn tertiary" href="{{ GOOGLE_DRIVE_URL }}" target="_blank" rel="noopener">Open the shared Google Drive folder</a>
+            {% if GOOGLE_FORM_EMBED_URL %}
+            <div class="form-embed-shell">
+              <iframe
+                src="{{ GOOGLE_FORM_EMBED_URL }}"
+                title="Appreciation form"
+                loading="lazy"
+                referrerpolicy="strict-origin-when-cross-origin"
+              ></iframe>
             </div>
-            <p class="submission-note">Recommended format: name, role or relationship, batch or year, short headline, main message, and any media references.</p>
+            <p class="submission-note">If the embedded form does not load well on your device, use the “Open appreciation form” button above.</p>
+            {% else %}
+            <p class="submission-note">A Google Form can be connected here at any time. Once its share link is added, this section can open it directly or embed it on the page.</p>
+            {% endif %}
           </article>
         </div>
 
