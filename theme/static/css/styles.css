@@ -538,7 +538,7 @@ body[data-theme="dark"] .portrait-shell {
   display: flex;
   align-items: center;
   gap: 0.9rem;
-  margin: -92px 26px 0;
+  margin: 1rem 0 0;
   padding: 1rem;
   border-radius: 20px;
   background: color-mix(in srgb, var(--surface-strong) 88%, transparent);
@@ -571,6 +571,7 @@ body[data-theme="dark"] .portrait-shell {
 }
 
 .hero-note {
+  margin-top: 0;
   padding: 1rem 1.1rem;
   border-radius: 22px;
   background: linear-gradient(135deg, color-mix(in srgb, var(--surface-strong) 80%, transparent), color-mix(in srgb, var(--accent-soft) 80%, transparent));
@@ -1618,7 +1619,7 @@ li {
   }
 
   .profile-card {
-    margin: -76px 22px 0;
+    margin: 1rem 0 0;
   }
 
   .stats-bar {
@@ -1725,10 +1726,6 @@ li {
     text-align: center;
   }
 
-  .profile-card {
-    margin: -54px 16px 0;
-  }
-
   .timeline::before {
     display: none;
   }
@@ -1785,10 +1782,6 @@ li {
 
   .portrait-shell {
     transform: none;
-  }
-
-  .profile-card {
-    margin: -40px 12px 0;
   }
 
   .content-block p,
