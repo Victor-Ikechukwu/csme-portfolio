@@ -1,7 +1,8 @@
 const navToggle = document.querySelector('.nav-toggle');
 const navLinks = document.querySelector('.nav-links');
-const links = document.querySelectorAll('.nav-links a');
+const links = document.querySelectorAll('.nav-links a[href^="#"]');
 const sections = document.querySelectorAll('main section[id]');
+const themeToggles = document.querySelectorAll('[data-theme-toggle]');
 const appreciationForm = document.querySelector('[data-appreciation-form]');
 const mediaPreview = document.querySelector('[data-media-preview]');
 const formStatus = document.querySelector('[data-form-status]');
@@ -15,8 +16,49 @@ const lightboxTitle = document.querySelector('[data-lightbox-title]');
 const lightboxCaption = document.querySelector('[data-lightbox-caption]');
 const lightboxClose = document.querySelector('[data-lightbox-close]');
 const mediaInputs = appreciationForm ? appreciationForm.querySelectorAll('[data-media-input]') : [];
+const statNumbers = document.querySelectorAll('[data-count]');
 
 const previewUrls = new Set();
+const storageKey = 'portfolio-theme';
+
+const getPreferredTheme = () => {
+  const urlTheme = new URLSearchParams(window.location.search).get('theme');
+  if (urlTheme === 'light' || urlTheme === 'dark') {
+    return urlTheme;
+  }
+
+  const savedTheme = window.localStorage.getItem(storageKey);
+  if (savedTheme === 'light' || savedTheme === 'dark') {
+    return savedTheme;
+  }
+
+  return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+};
+
+const applyTheme = theme => {
+  document.body.dataset.theme = theme;
+
+  const nextLabel = theme === 'dark' ? 'Light mode' : 'Dark mode';
+  themeToggles.forEach(toggle => {
+    toggle.setAttribute('aria-pressed', String(theme === 'dark'));
+    toggle.setAttribute('aria-label', `Switch to ${nextLabel.toLowerCase()}`);
+
+    const label = toggle.querySelector('.theme-toggle-label');
+    if (label) {
+      label.textContent = nextLabel;
+    }
+  });
+};
+
+applyTheme(getPreferredTheme());
+
+themeToggles.forEach(toggle => {
+  toggle.addEventListener('click', () => {
+    const nextTheme = document.body.dataset.theme === 'dark' ? 'light' : 'dark';
+    window.localStorage.setItem(storageKey, nextTheme);
+    applyTheme(nextTheme);
+  });
+});
 
 if (navToggle && navLinks) {
   navToggle.addEventListener('click', () => {
@@ -45,6 +87,8 @@ if (yearEl) {
   yearEl.textContent = new Date().getFullYear();
 }
 
+const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
 const revealObserver = new IntersectionObserver(entries => {
   entries.forEach(entry => {
     if (entry.isIntersecting) {
@@ -67,6 +111,56 @@ const activeObserver = new IntersectionObserver(entries => {
 }, { rootMargin: '-45% 0px -50% 0px', threshold: 0 });
 
 sections.forEach(section => activeObserver.observe(section));
+
+const animateCount = element => {
+  const target = Number.parseInt(element.dataset.count || '', 10);
+  const originalText = element.textContent.trim();
+
+  if (Number.isNaN(target) || !/\d/.test(originalText)) {
+    return;
+  }
+
+  if (reducedMotion) {
+    element.textContent = originalText;
+    return;
+  }
+
+  const numberMatch = originalText.match(/^(.*?)(\d+)(.*)$/);
+  if (!numberMatch) {
+    return;
+  }
+
+  const [, prefix, , suffix] = numberMatch;
+  const duration = 1200;
+  const start = performance.now();
+
+  const step = now => {
+    const progress = Math.min((now - start) / duration, 1);
+    const eased = 1 - Math.pow(1 - progress, 3);
+    const value = Math.round(target * eased);
+    element.textContent = `${prefix}${value}${suffix}`;
+
+    if (progress < 1) {
+      window.requestAnimationFrame(step);
+    } else {
+      element.textContent = originalText;
+    }
+  };
+
+  window.requestAnimationFrame(step);
+};
+
+if (statNumbers.length) {
+  const statObserver = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (!entry.isIntersecting) return;
+      animateCount(entry.target);
+      statObserver.unobserve(entry.target);
+    });
+  }, { threshold: 0.55 });
+
+  statNumbers.forEach(stat => statObserver.observe(stat));
+}
 
 const setFormStatus = (message = '', state = '') => {
   if (!formStatus) return;
