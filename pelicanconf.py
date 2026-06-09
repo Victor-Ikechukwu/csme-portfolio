@@ -21,10 +21,17 @@ def load_json(filename: str, default):
 def build_google_form_embed_url(url: str) -> str:
     if not url:
         return ""
+    url = url.replace("/preview", "/viewform")
     if "embedded=true" in url:
         return url
     separator = "&" if "?" in url else "?"
     return f"{url}{separator}embedded=true"
+
+
+def normalize_google_form_url(url: str) -> str:
+    if not url:
+        return ""
+    return url.replace("/preview", "/viewform")
 
 
 def load_appreciations():
@@ -83,7 +90,9 @@ AUTHOR_FEED_RSS = None
 
 CURRENT_YEAR = datetime.now().year
 GOOGLE_DRIVE_URL = "https://drive.google.com/drive/folders/1gpqrk9WKei1q4uIv2ijzWXWO1vQawtdc?usp=sharing"
-GOOGLE_FORM_URL = ""
+GOOGLE_FORM_URL = normalize_google_form_url(
+    "https://docs.google.com/forms/d/12Fx4Bqw3XzyIiRsjnuhJRJ4vxhbHpolPXP74soG6k8o/preview"
+)
 GOOGLE_FORM_EMBED_URL = build_google_form_embed_url(GOOGLE_FORM_URL)
 INSTITUTE_EMAIL = "victor-csme@dsu.edu.in"
 PERSONAL_EMAIL = "victor.agughasi@gmail.com"
