@@ -1,75 +1,66 @@
-<div align="center">
+# Academic Portfolio of Dr. Agughasi Victor Ikechukwu
 
-# Welcome to the official Academic Portfolio of Dr. Agughasi Victor Ikechukwu
+This repository now uses a **fully static, Python-based build** with [Pelican](https://docs.getpelican.com/en/latest/). The site is designed to stay portable, subscription-independent, and easy to mirror across free hosts.
 
-Responsive academic portfolio website for **Dr. Agughasi Victor Ikechukwu**, built as a clean static site for research visibility, academic outreach, and straightforward Netlify deployment.
+## Why this setup
 
-<p>
-  <img src="https://img.shields.io/badge/HTML-5-E34F26?style=for-the-badge&logo=html5&logoColor=white" alt="HTML5 badge" />
-  <img src="https://img.shields.io/badge/CSS-3-1572B6?style=for-the-badge&logo=css3&logoColor=white" alt="CSS3 badge" />
-  <img src="https://img.shields.io/badge/JavaScript-ES6-F7DF1E?style=for-the-badge&logo=javascript&logoColor=111111" alt="JavaScript badge" />
-  <img src="https://img.shields.io/badge/Netlify-Ready-00C7B7?style=for-the-badge&logo=netlify&logoColor=white" alt="Netlify badge" />
-</p>
+- No hosted database is required.
+- No paid form backend is required.
+- The appreciation wall is curated from repository data files.
+- The entire site can be deployed to free static hosts such as:
+  - Cloudflare Pages
+  - GitHub Pages
 
-</div>
+## Stack
 
-## Overview
+- `Pelican` for static site generation
+- `Markdown` support through Python Markdown
+- `Git` as the long-term archive for content and appreciation records
+- `GitHub Actions` workflow for optional GitHub Pages deployment
 
-This repository contains a lightweight portfolio site designed to present:
-
-- Academic background and professional profile
-- Research focus areas and scholarly outputs
-- Teaching and mentorship interests
-- Key achievements, proposals, and collaborations
-- Contact details and downloadable CV
-
-The project uses plain HTML, CSS, and JavaScript, making it easy to maintain, fast to load, and simple to deploy.
-
-## Highlights
-
-- Responsive single-page layout for desktop, tablet, and mobile
-- Sticky navigation with active section highlighting
-- Clean hero section with profile and institution card
-- Research, publications, achievements, and teaching sections
-- Public appreciation portal with text, image, and short-video submissions
-- Memory wall powered by Netlify Forms plus a serverless gallery endpoint
-- Downloadable CV and direct contact actions
-- Static hosting friendly setup with Netlify configuration included
-
-## Tech Stack
-
-| Layer | Details |
-| --- | --- |
-| Markup | `HTML5` |
-| Styling | `CSS3` |
-| Interactivity | `Vanilla JavaScript` |
-| Hosting | `Netlify` or any static host |
-| Public submission gallery | `Netlify Forms` + `Netlify Functions` |
-
-## Project Structure
+## Project structure
 
 ```text
 csme-portfolio/
-|-- assets/
-|   |-- csme-logo.png
-|   |-- profile.png
-|   `-- Dr_Victor_Agughasi_DSU_ATS_CV.pdf
-|-- index.html
-|-- styles.css
-|-- script.js
-|-- netlify/
-|   `-- functions/
-|       `-- appreciations.js
-|-- netlify.toml
-`-- README.md
+|-- content/
+|   |-- assets/
+|   `-- data/
+|       |-- appreciations.example.json
+|       `-- appreciations.json
+|-- theme/
+|   |-- static/
+|   |   |-- css/
+|   |   `-- js/
+|   `-- templates/
+|       `-- index.html
+|-- .github/
+|   `-- workflows/
+|       `-- deploy-pages.yml
+|-- pelicanconf.py
+|-- publishconf.py
+`-- requirements.txt
 ```
 
-## Local Preview
+## Local development
 
-Run a simple local server from the project root:
+1. Create and activate a virtual environment if needed.
+2. Install dependencies:
 
 ```powershell
-python -m http.server 4173
+python -m venv .venv
+.\.venv\Scripts\python -m pip install -r requirements.txt
+```
+
+3. Build the site:
+
+```powershell
+.\.venv\Scripts\pelican.exe content -o output -s pelicanconf.py
+```
+
+4. Preview the generated site:
+
+```powershell
+python -m http.server 4173 --directory output
 ```
 
 Then open:
@@ -78,121 +69,80 @@ Then open:
 http://127.0.0.1:4173
 ```
 
-## Deploying to Netlify
+## Appreciation workflow
 
-This site is fully static, so no build step is required.
+The appreciation wall is curated manually.
 
-### Option 1: Netlify Drop
+### How new entries are added
 
-1. Open [Netlify Drop](https://app.netlify.com/drop).
-2. Drag the full project folder or the site contents into the upload area.
-3. Netlify will publish the site automatically.
+1. Receive the message by email.
+2. Upload any approved media into `content/assets/` if needed.
+3. Add the published record to `content/data/appreciations.json`.
+4. Rebuild and deploy the site.
 
-### Option 2: GitHub + Netlify
+### Appreciation data format
 
-1. Push this repository to GitHub.
-2. In Netlify, choose **Add new site** -> **Import an existing project**.
-3. Select the repository.
-4. Use these settings:
+Use `content/data/appreciations.example.json` as the template.
 
-| Setting | Value |
-| --- | --- |
-| Build command | leave empty |
-| Publish directory | `.` |
-
-The included `netlify.toml` already reflects the correct publish directory.
-
-## Appreciation Portal Setup
-
-The new appreciation portal uses:
-
-- A Netlify HTML form named `student-appreciation` for public submissions
-- Built-in Netlify file uploads for up to 3 images and 1 short video
-- A serverless function at `/api/appreciations` that reads verified submissions and renders the public memory wall
-
-### Required Netlify configuration
-
-Add this environment variable in your Netlify site settings:
+The live site reads:
 
 ```text
-NETLIFY_AUTH_TOKEN=your_personal_access_token
+content/data/appreciations.json
 ```
 
-Optional environment variables:
+An empty file is valid:
+
+```json
+[]
+```
+
+## Free deployment options
+
+### Recommended: Cloudflare Pages
+
+Use these settings in Cloudflare Pages:
+
+- Framework preset: `None`
+- Build command:
 
 ```text
-NETLIFY_SITE_ID=your-site-id-or-site-domain
-NETLIFY_APPRECIATION_FORM_NAME=student-appreciation
+python -m pip install -r requirements.txt && pelican content -o output -s publishconf.py
 ```
 
-Notes:
-
-- If `NETLIFY_SITE_ID` is omitted, the function will fall back to Netlify's runtime `SITE_ID` when available.
-- The function only returns verified submissions, which means Netlify's spam filtering gives you a basic moderation layer out of the box.
-
-### Form detection
-
-In the Netlify dashboard:
-
-1. Go to `Forms`.
-2. Enable form detection if it is currently disabled.
-3. Redeploy the site after enabling it.
-
-### Upload limits
-
-Netlify Forms currently supports:
-
-- One file per file field
-- A maximum request size of `8 MB`
-- File uploads that should complete within `30 seconds`
-
-This is why the portal is structured as:
-
-- `photo_1`
-- `photo_2`
-- `photo_3`
-- `video_1`
-
-### Local development with functions
-
-To test the appreciation wall locally with functions enabled, use Netlify Dev:
-
-```powershell
-npx netlify dev
-```
-
-Then open:
+- Build output directory:
 
 ```text
-http://127.0.0.1:8888
+output
 ```
 
-## Customization
+Why this is the primary recommendation:
 
-To adapt this portfolio for future updates:
+- generous free static hosting
+- easy GitHub integration
+- easy rollback
+- no dependency on Netlify credits
 
-- Update personal content in `index.html`
-- Refine colors, spacing, and layout in `styles.css`
-- Adjust navigation or animation behavior in `script.js`
-- Replace files inside `assets/` for profile image, logo, or CV updates
+### Backup: GitHub Pages
 
-## Why This Setup Works Well
+A workflow is already included at:
 
-- No framework overhead
-- Fast initial load
-- Easy to edit without a build pipeline
-- Reliable deployment on static hosting platforms
-- Simple repo structure for long-term maintenance
+```text
+.github/workflows/deploy-pages.yml
+```
 
+To use it:
 
-## License and Usage
+1. Push the repository to GitHub.
+2. In repository settings, enable **GitHub Pages** with **GitHub Actions** as the source.
+3. Push to `main`.
 
-© 2026 Dr. Victor Ikechukwu Agughasi. All rights reserved.
+## Notes on permanence
 
-This website is created for personal academic, professional, and portfolio presentation purposes.
+No third-party host can promise literal "forever free." However, this repo is intentionally designed so that:
 
-The personal content on this website, including the biography, CV, photographs, academic profile, achievements, grants, patents, publications list, and institutional references, may not be copied, reproduced, modified, or redistributed without prior written permission.
+- the site is static
+- the data is stored in plain files
+- the archive is versioned in Git
+- the site can move between free hosts with minimal change
 
-The institutional names, logos, and affiliations displayed on this website are used only for identification and academic representation purposes. All related trademarks, logos, and institutional identities remain the property of their respective owners.
-
-The website structure and code may be used as inspiration for academic portfolio development, but direct reuse of personal content, images, logos, or documents is strictly prohibited.
+That is the strongest practical protection against future pricing changes.

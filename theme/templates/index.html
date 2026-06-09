@@ -3,20 +3,20 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="description" content="Academic portfolio of Dr. Agughasi Victor Ikechukwu, Senior Assistant Professor, Department of Computer Science and Medical Engineering, School of Engineering, Dayananda Sagar University, Bangalore, Karnataka-India." />
+  <meta name="description" content="{{ SITE_DESCRIPTION }}" />
   <meta name="keywords" content="Dr. Agughasi Victor Ikechukwu, AI for Healthcare, Medical Image Analysis, Explainable AI, Quantum Machine Learning, Dayananda Sagar University, Computer Science and Medical Engineering" />
-  <meta name="author" content="Dr. Agughasi Victor Ikechukwu" />
-  <meta property="og:title" content="Dr. Agughasi Victor Ikechukwu | AI for Healthcare" />
+  <meta name="author" content="{{ AUTHOR }}" />
+  <meta property="og:title" content="{{ SITETITLE }}" />
   <meta property="og:description" content="Senior Assistant Professor in Computer Science and Medical Engineering, DSU. Researcher in AI for Healthcare, Medical Imaging, Explainable AI, and Assistive Technology." />
-  <meta property="og:image" content="assets/profile.png" />
+  <meta property="og:image" content="{{ SITEURL }}/assets/profile.png" />
   <meta property="og:type" content="website" />
   <meta name="color-scheme" content="light dark" />
-  <title>Dr. Agughasi Victor Ikechukwu | Academic Portfolio</title>
-  <link rel="icon" href="assets/csme-logo.png" />
+  <title>{{ SITETITLE }}</title>
+  <link rel="icon" href="{{ SITEURL }}/assets/csme-logo.png" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="{{ SITEURL }}/theme/css/styles.css" />
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -31,7 +31,7 @@
       "@type": "CollegeOrUniversity",
       "name": "Dayananda Sagar University"
     },
-    "email": "victor.agughasi@gmail.com",
+    "email": "{{ PERSONAL_EMAIL }}",
     "telephone": "+91 7892819690",
     "url": "https://www.linkedin.com/in/victor-ikechukwu-agughasi/",
     "sameAs": [
@@ -54,10 +54,10 @@
   <header class="site-header" id="top">
     <nav class="nav" aria-label="Main navigation">
       <a class="brand" href="#top" aria-label="Home">
-        <img src="assets/csme-logo.png" alt="Department of Computer Science and Medical Engineering logo" />
+        <img src="{{ SITEURL }}/assets/csme-logo.png" alt="Department of Computer Science and Medical Engineering logo" />
         <span>
           <strong>Dr. Victor Agughasi</strong>
-          <small>AI for Healthcare</small>
+          <small>{{ SITESUBTITLE }}</small>
         </span>
       </a>
       <button class="nav-toggle" type="button" aria-label="Open menu" aria-controls="primary-navigation" aria-expanded="false">&#9776;</button>
@@ -72,7 +72,7 @@
         <a href="#contact">Contact</a>
       </div>
       <button class="theme-toggle" type="button" data-theme-toggle aria-label="Switch to dark mode" aria-pressed="false">
-        <span class="theme-toggle-icon" aria-hidden="true">◐</span>
+        <span class="theme-toggle-icon" aria-hidden="true">&#9680;</span>
         <span class="theme-toggle-label">Dark mode</span>
       </button>
     </nav>
@@ -94,12 +94,12 @@
             <a class="mini-badge" href="https://www.webofscience.com/wos/author/record/ABU-3111-2022" target="_blank" rel="noopener">Web of Science</a>
           </div>
           <div class="hero-actions">
-            <a class="btn primary" href="assets/Dr_Victor_Agughasi_DSU_ATS_CV.pdf" download>Download CV</a>
+            <a class="btn primary" href="{{ SITEURL }}/assets/Dr_Victor_Agughasi_DSU_ATS_CV.pdf" download>Download CV</a>
             <a class="btn secondary" href="#affiliation">View DSU Affiliation</a>
             <a class="btn tertiary" href="#appreciation">Open Memory Wall</a>
           </div>
           <button class="btn secondary theme-inline-toggle" type="button" data-theme-toggle aria-label="Switch to dark mode" aria-pressed="false">
-            <span class="theme-toggle-icon" aria-hidden="true">◐</span>
+            <span class="theme-toggle-icon" aria-hidden="true">&#9680;</span>
             <span class="theme-toggle-label">Dark mode</span>
           </button>
           <div class="social-strip" aria-label="Academic profile links">
@@ -115,10 +115,10 @@
         </div>
         <div class="hero-card reveal delay-1">
           <div class="portrait-shell">
-            <img class="portrait" src="assets/profile.png" alt="Portrait of Dr. Agughasi Victor Ikechukwu" />
+            <img class="portrait" src="{{ SITEURL }}/assets/profile.png" alt="Portrait of Dr. Agughasi Victor Ikechukwu" />
           </div>
           <div class="profile-card">
-            <img src="assets/csme-logo.png" alt="CSME logo" />
+            <img src="{{ SITEURL }}/assets/csme-logo.png" alt="CSME logo" />
             <div>
               <strong>Dayananda Sagar University</strong>
               <span>Department of Computer Science and Medical Engineering</span>
@@ -265,14 +265,14 @@
             <span class="timeline-year">2026</span>
             <div class="timeline-copy">
               <h3>Three Indian Patent Publications</h3>
-              <p>Published patent applications include &quot;AI-Assisted Newborn Footprint and Palmprint Recognition for Reliable Infant Identity Verification&quot; (App no. 202641015976, waiting for FER), &quot;Development of an IoT-Enabled Edge-AI System for Real-Time Pest Detection and Non-Lethal Mitigation in Precision Agriculture&quot; (App no. 202641015258, waiting for FER), and &quot;Detection of Congenital Heart Diseases Using Novel Deep Learning Model&quot; (App no. 202641015562, published).</p>
+              <p>Published patent applications include "AI-Assisted Newborn Footprint and Palmprint Recognition for Reliable Infant Identity Verification" (App no. 202641015976, waiting for FER), "Development of an IoT-Enabled Edge-AI System for Real-Time Pest Detection and Non-Lethal Mitigation in Precision Agriculture" (App no. 202641015258, waiting for FER), and "Detection of Congenital Heart Diseases Using Novel Deep Learning Model" (App no. 202641015562, published).</p>
             </div>
           </div>
           <div class="timeline-item">
             <span class="timeline-year">2025</span>
             <div class="timeline-copy">
               <h3>AIISH Hackathon Winner</h3>
-              <p>Winner in Assistive Technology for the project &quot;Development of Interactive Tele-consultation Tool for SLPs and Audiologists.&quot;</p>
+              <p>Winner in Assistive Technology for the project "Development of Interactive Tele-consultation Tool for SLPs and Audiologists."</p>
             </div>
           </div>
           <div class="timeline-item">
@@ -428,182 +428,128 @@
     <section class="section-pad appreciation-section" id="appreciation">
       <div class="container">
         <div class="section-heading centered reveal">
-          <p class="eyebrow">Digital Testimony</p>
-          <h2>A living wall of gratitude, memories, and shared moments.</h2>
-          <p>Students, mentees, collaborators, and friends can leave a note of appreciation here, add photos, attach a short video, and help preserve the journey for years to come.</p>
+          <p class="eyebrow">Curated Archive</p>
+          <h2>A living wall of gratitude, preserved without subscriptions.</h2>
+          <p>This appreciation wall is now curated manually and published from repository files, which means it stays portable, versioned, and independent of any paid form service.</p>
         </div>
 
         <div class="appreciation-layout">
           <article class="memory-intro reveal">
-            <span class="memory-badge">For life, in one place</span>
-            <h3>Leave a memory that can still be felt years from now.</h3>
+            <span class="memory-badge">Git-backed and durable</span>
+            <h3>Every memory is reviewed, archived, and published intentionally.</h3>
             <p>
-              If Dr. Victor has guided you, inspired your project, encouraged your research, or simply made a lasting impact on your time at MIT Mysore or beyond, this page is your space to say it in your own words.
+              Instead of relying on a hosted form backend, new appreciations are collected through email and optional shared media uploads, then curated into this site as static content. That keeps the archive exportable and under your control.
             </p>
             <div class="memory-points">
               <div>
-                <strong>Write freely</strong>
-                <span>Share a heartfelt message, a defining classroom moment, or a thank-you that deserves to be remembered.</span>
+                <strong>No subscription lock-in</strong>
+                <span>Messages are stored as repository data files, not inside a proprietary forms dashboard.</span>
               </div>
               <div>
-                <strong>Add media</strong>
-                <span>Attach up to three images and one short video to help bring the memory to life.</span>
+                <strong>Transparent moderation</strong>
+                <span>Only approved memories are committed, reviewed, and published in the next site deployment.</span>
               </div>
               <div>
-                <strong>Publish publicly</strong>
-                <span>Verified submissions appear in the memory wall below for visitors around the world to see.</span>
+                <strong>Easy backup</strong>
+                <span>The entire appreciation archive can be cloned, exported, mirrored, or moved to another free host at any time.</span>
               </div>
             </div>
             <p class="portal-note">
-              Please keep uploads under 8 MB in total and use the portal only for content you are comfortable sharing publicly.
+              This is the safest long-term workflow when permanence matters more than instant form submission.
             </p>
           </article>
 
           <article class="memory-form-card reveal delay-1">
             <div class="memory-form-head">
-              <p class="eyebrow">Submit a memory</p>
-              <h3>Post your appreciation</h3>
+              <p class="eyebrow">How to contribute</p>
+              <h3>Send your appreciation for curation</h3>
             </div>
-
-            <form
-              class="appreciation-form"
-              name="student-appreciation"
-              action="/"
-              method="POST"
-              enctype="multipart/form-data"
-              netlify
-              data-netlify="true"
-              data-netlify-honeypot="bot-field"
-              data-appreciation-form
-            >
-              <input type="hidden" name="form-name" value="student-appreciation" />
-              <p class="hidden-field">
-                <label>Do not fill this out if you are human: <input name="bot-field" /></label>
-              </p>
-
-              <div class="form-grid">
-                <label class="field">
-                  <span>Your name</span>
-                  <input type="text" name="name" placeholder="Your full name" required />
-                </label>
-                <label class="field">
-                  <span>Email address</span>
-                  <input type="email" name="email" placeholder="Optional, for follow-up" />
-                </label>
-                <label class="field">
-                  <span>Headline</span>
-                  <input type="text" name="headline" maxlength="90" placeholder="A short title for your memory" required />
-                </label>
-                <label class="field">
-                  <span>Batch / Year / Class</span>
-                  <input type="text" name="batch" maxlength="80" placeholder="Example: AIML 2024 batch" />
-                </label>
-                <label class="field">
-                  <span>Your connection</span>
-                  <select name="relationship" required>
-                    <option value="">Select one</option>
-                    <option>Student</option>
-                    <option>Mentee</option>
-                    <option>Project team member</option>
-                    <option>Research scholar</option>
-                    <option>Colleague</option>
-                    <option>Friend</option>
-                  </select>
-                </label>
-                <label class="field">
-                  <span>Place or context</span>
-                  <input type="text" name="memory_place" maxlength="100" placeholder="MIT Mysore, project lab, workshop..." />
-                </label>
+            <div class="submission-steps">
+              <div class="submission-step">
+                <strong>1. Email your note</strong>
+                <p>Send your appreciation message to either the institute email or the personal email below. Include your name, relationship, batch or year, and the message you want published.</p>
               </div>
-
-              <label class="field">
-                <span>Your message</span>
-                <textarea name="message" rows="6" maxlength="1800" placeholder="Share your appreciation, a memory, or the impact Dr. Victor made on your journey." required></textarea>
-              </label>
-
-              <div class="upload-grid">
-                <label class="field upload-field">
-                  <span>Photo 1</span>
-                  <input type="file" name="photo_1" accept="image/*" data-media-input />
-                </label>
-                <label class="field upload-field">
-                  <span>Photo 2</span>
-                  <input type="file" name="photo_2" accept="image/*" data-media-input />
-                </label>
-                <label class="field upload-field">
-                  <span>Photo 3</span>
-                  <input type="file" name="photo_3" accept="image/*" data-media-input />
-                </label>
-                <label class="field upload-field">
-                  <span>Short video</span>
-                  <input type="file" name="video_1" accept="video/*" data-media-input />
-                </label>
+              <div class="submission-step">
+                <strong>2. Share optional media</strong>
+                <p>If you have photos or videos, upload them to the shared Google Drive folder. Mention the folder or filenames in your email so they can be matched during curation.</p>
               </div>
-
-              <div class="media-preview" data-media-preview aria-live="polite"></div>
-
-              <label class="consent-row">
-                <input type="checkbox" name="consent_public" value="yes" required />
-                <span>I consent to this message and any attached media being displayed publicly on this website.</span>
-              </label>
-
-              <div class="form-footer">
-                <p class="form-help">Netlify accepts one upload per field, so this portal supports three images and one video per post.</p>
-                <button class="btn primary" type="submit">Publish appreciation</button>
+              <div class="submission-step">
+                <strong>3. Review and publish</strong>
+                <p>Approved entries are added to the repository data and published in the next static deploy, without depending on any subscription-based form service.</p>
               </div>
-
-              <p class="form-status" data-form-status aria-live="polite"></p>
-            </form>
+            </div>
+            <div class="submission-actions">
+              <a class="btn primary" href="mailto:{{ INSTITUTE_EMAIL }}">Email institute address</a>
+              <a class="btn secondary" href="mailto:{{ PERSONAL_EMAIL }}">Email personal address</a>
+              <a class="btn tertiary" href="{{ GOOGLE_DRIVE_URL }}" target="_blank" rel="noopener">Open the shared Google Drive folder</a>
+            </div>
+            <p class="submission-note">Recommended format: name, role or relationship, batch or year, short headline, main message, and any media references.</p>
           </article>
         </div>
-
-        <section class="drive-share reveal delay-2" aria-labelledby="drive-share-title">
-          <div class="drive-share-copy">
-            <p class="eyebrow">Large File Sharing</p>
-            <h3 id="drive-share-title">Have a full video, an event album, or a larger archive to share?</h3>
-            <p>
-              If your tribute includes longer recordings, large batches of photographs, certificates, scanned memories, or files that go beyond the upload limit above, please use the shared Google Drive folder below.
-            </p>
-            <p>
-              You can upload directly there and still post a short appreciation on this page so the public memory wall carries your message while the full media stays safely in one place.
-            </p>
-          </div>
-
-          <aside class="drive-share-card" aria-label="Google Drive upload option">
-            <span class="drive-share-badge">Best for large videos and folders</span>
-            <ul class="drive-share-list">
-              <li>Upload long videos, multiple photos, and larger files without size pressure.</li>
-              <li>Name your files or folders with your name, class, or batch for easier identification.</li>
-              <li>Use the appreciation form above as the public note, and Google Drive as the full archive.</li>
-            </ul>
-            <a
-              class="btn primary drive-share-link"
-              href="https://drive.google.com/drive/folders/1gpqrk9WKei1q4uIv2ijzWXWO1vQawtdc?usp=sharing"
-              target="_blank"
-              rel="noopener"
-            >
-              Open the shared Google Drive folder
-            </a>
-            <p class="drive-share-note">If the form upload feels too limited, this is the recommended place for richer memories and large media collections.</p>
-          </aside>
-        </section>
 
         <div class="memory-wall reveal delay-2">
           <div class="memory-wall-head">
             <div>
               <p class="eyebrow">Public memory wall</p>
-              <h3>Messages already shared</h3>
+              <h3>Published appreciations</h3>
             </div>
-            <p>Every verified note becomes part of this digital testimony.</p>
+            <p>Each published note below is part of a curated, repository-backed archive.</p>
           </div>
 
-          <div class="memory-feedback" data-memory-feedback>
-            <p class="memory-state" data-memory-loading>Loading memories...</p>
-            <p class="memory-state hidden" data-memory-empty>No public appreciations have been published yet. Be the first to add one.</p>
-            <p class="memory-state hidden" data-memory-error></p>
+          {% if APPRECIATIONS %}
+          <div class="memory-grid" aria-live="polite">
+            {% for entry in APPRECIATIONS %}
+            <article class="memory-card">
+              <div class="memory-card-header">
+                <div>
+                  <h4>{{ entry.headline }}</h4>
+                  <div class="memory-meta">
+                    {% if entry.relationship %}<span class="memory-chip">{{ entry.relationship }}</span>{% endif %}
+                    {% if entry.batch %}<span class="memory-chip">{{ entry.batch }}</span>{% endif %}
+                    {% if entry.memory_place %}<span class="memory-chip">{{ entry.memory_place }}</span>{% endif %}
+                  </div>
+                </div>
+                {% if entry.display_date %}<div class="memory-date">{{ entry.display_date }}</div>{% endif %}
+              </div>
+              <div class="memory-author">
+                <strong>{{ entry.name }}</strong>
+                {% set subline = [] %}
+                {% if entry.relationship %}{% set _ = subline.append(entry.relationship) %}{% endif %}
+                {% if entry.batch %}{% set _ = subline.append(entry.batch) %}{% endif %}
+                {% if subline %}<span>{{ " | ".join(subline) }}</span>{% endif %}
+              </div>
+              <p>{{ entry.message }}</p>
+              {% if entry.media %}
+              <div class="memory-media-grid">
+                {% for media in entry.media %}
+                <button
+                  class="memory-media-button"
+                  type="button"
+                  data-media-kind="{{ media.kind }}"
+                  data-media-url="{{ media.url }}"
+                  data-media-title="{{ entry.headline }}"
+                  data-media-caption="{{ entry.name }}"
+                >
+                  {% if media.kind == "video" %}
+                  <div class="memory-video-placeholder">
+                    <span aria-hidden="true"></span>
+                    <strong>Video memory</strong>
+                  </div>
+                  {% else %}
+                  <img src="{{ media.url }}" alt="{{ media.alt or entry.headline }}" loading="lazy" decoding="async" />
+                  {% endif %}
+                </button>
+                {% endfor %}
+              </div>
+              {% else %}
+              <div class="memory-empty-media">This memory was shared as a written testimony.</div>
+              {% endif %}
+            </article>
+            {% endfor %}
           </div>
-
-          <div class="memory-grid" data-memory-grid aria-live="polite"></div>
+          {% else %}
+          <p class="memory-state">No public appreciations have been published yet. Send the first curated note by email to begin the archive.</p>
+          {% endif %}
         </div>
       </div>
     </section>
@@ -614,13 +560,14 @@
           <p class="eyebrow">Contact</p>
           <h2>Let's collaborate on meaningful AI for healthcare.</h2>
           <p>Open to research collaboration, student mentorship, invited talks, grant proposals, clinical AI projects, and academic innovation partnerships.</p>
+          <p>For appreciations or archival submissions, either the institute or personal email can be used. Both routes remain independent of hosted form subscriptions.</p>
         </div>
         <div class="contact-actions">
-          <a class="btn primary" href="mailto:victor-csme@dsu.edu.in">victor-csme@dsu.edu.in</a>
-          <a class="btn secondary" href="mailto:victor.agughasi@gmail.com">victor.agughasi@gmail.com</a>
+          <a class="btn primary" href="mailto:{{ INSTITUTE_EMAIL }}">{{ INSTITUTE_EMAIL }}</a>
+          <a class="btn secondary" href="mailto:{{ PERSONAL_EMAIL }}">{{ PERSONAL_EMAIL }}</a>
           <a class="btn secondary" href="tel:+917892819690">+91 7892819690</a>
           <a class="btn secondary" href="https://dsu.edu.in/agughasi-victor" target="_blank" rel="noopener">Official DSU page</a>
-          <a class="btn ghost" href="assets/Dr_Victor_Agughasi_DSU_ATS_CV.pdf" download>Download CV</a>
+          <a class="btn ghost" href="{{ SITEURL }}/assets/Dr_Victor_Agughasi_DSU_ATS_CV.pdf" download>Download CV</a>
         </div>
       </div>
     </section>
@@ -628,7 +575,7 @@
 
   <footer class="footer">
     <div class="container footer-grid">
-      <p>&copy; <span id="year"></span> Dr. Agughasi Victor Ikechukwu. All rights reserved.</p>
+      <p>&copy; <span id="year">{{ CURRENT_YEAR }}</span> Dr. Agughasi Victor Ikechukwu. All rights reserved.</p>
       <a href="#top">Back to top &uarr;</a>
     </div>
   </footer>
@@ -645,6 +592,6 @@
     </div>
   </div>
 
-  <script src="script.js"></script>
+  <script src="{{ SITEURL }}/theme/js/script.js"></script>
 </body>
 </html>
