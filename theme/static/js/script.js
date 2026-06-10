@@ -10,6 +10,8 @@ const lightboxTitle = document.querySelector("[data-lightbox-title]");
 const lightboxCaption = document.querySelector("[data-lightbox-caption]");
 const lightboxClose = document.querySelector("[data-lightbox-close]");
 const mediaButtons = document.querySelectorAll("[data-media-url]");
+const starterCopyButtons = document.querySelectorAll("[data-copy-starter]");
+const starterStatus = document.querySelector("[data-starter-status]");
 
 document.documentElement.classList.add("js");
 
@@ -155,6 +157,47 @@ if (statNumbers.length) {
 
   statNumbers.forEach(stat => statObserver.observe(stat));
 }
+
+const setStarterStatus = message => {
+  if (starterStatus) {
+    starterStatus.textContent = message;
+  }
+};
+
+const copyText = async text => {
+  if (navigator.clipboard?.writeText) {
+    await navigator.clipboard.writeText(text);
+    return;
+  }
+
+  const fallback = document.createElement("textarea");
+  fallback.value = text;
+  fallback.setAttribute("readonly", "");
+  fallback.style.position = "absolute";
+  fallback.style.left = "-9999px";
+  document.body.append(fallback);
+  fallback.select();
+  document.execCommand("copy");
+  fallback.remove();
+};
+
+starterCopyButtons.forEach(button => {
+  button.addEventListener("click", async () => {
+    const card = button.closest(".starter-card");
+    const starterText = card?.querySelector("[data-starter-text]")?.textContent?.trim();
+    if (!starterText) {
+      setStarterStatus("Starter message is unavailable right now.");
+      return;
+    }
+
+    try {
+      await copyText(starterText);
+      setStarterStatus("Starter message copied. Personalize it before sending.");
+    } catch (error) {
+      setStarterStatus("Copy failed on this device. You can still select the message manually.");
+    }
+  });
+});
 
 const openLightbox = media => {
   if (!lightbox || !lightboxMedia || !lightboxTitle || !lightboxCaption) return;

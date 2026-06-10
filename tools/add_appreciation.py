@@ -2,6 +2,7 @@ from __future__ import annotations
 
 import argparse
 import json
+from datetime import datetime
 from pathlib import Path
 
 
@@ -20,6 +21,21 @@ def save_entries(entries: list[dict]) -> None:
     with DATA_FILE.open("w", encoding="utf-8") as handle:
         json.dump(entries, handle, indent=2, ensure_ascii=False)
         handle.write("\n")
+
+
+def normalize_date(value: str) -> str:
+    return datetime.strptime(value, "%Y-%m-%d").strftime("%Y-%m-%d")
+
+
+def sort_entries(entries: list[dict]) -> list[dict]:
+    def sort_key(entry: dict):
+        created_at = str(entry.get("created_at", "")).strip()
+        try:
+            return (1, datetime.strptime(created_at, "%Y-%m-%d"), entry.get("headline", ""))
+        except ValueError:
+            return (0, datetime.min, entry.get("headline", ""))
+
+    return sorted(entries, key=sort_key, reverse=True)
 
 
 def build_parser() -> argparse.ArgumentParser:
@@ -46,12 +62,12 @@ def main() -> None:
             "relationship": args.relationship,
             "batch": args.batch,
             "memory_place": args.memory_place,
-            "created_at": args.created_at,
+            "created_at": normalize_date(args.created_at),
             "message": args.message,
             "media": [],
         }
     )
-    save_entries(entries)
+    save_entries(sort_entries(entries))
     print(f"Added appreciation for {args.name} to {DATA_FILE}")
 
 

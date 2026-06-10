@@ -482,6 +482,25 @@
                 <span>Optional photos or video</span>
               </div>
             </div>
+            <div class="starter-library" aria-labelledby="starter-library-title">
+              <div class="starter-library-head">
+                <h4 id="starter-library-title">Need help getting started?</h4>
+                <p>Use one of these starter notes as your default message, then personalize it before submitting the form or emailing it.</p>
+              </div>
+              <div class="starter-grid">
+                {% for starter in APPRECIATION_STARTERS %}
+                <article class="starter-card">
+                  <div class="starter-card-head">
+                    <span class="memory-chip">{{ starter.label }}</span>
+                    <h4>{{ starter.title }}</h4>
+                  </div>
+                  <blockquote class="starter-quote" data-starter-text>{{ starter.message }}</blockquote>
+                  <button class="btn secondary starter-copy-btn" type="button" data-copy-starter>Copy starter</button>
+                </article>
+                {% endfor %}
+              </div>
+              <p class="starter-status" data-starter-status aria-live="polite"></p>
+            </div>
             {% if GOOGLE_FORM_EMBED_URL %}
             <div class="form-embed-shell">
               <iframe
@@ -491,7 +510,7 @@
                 referrerpolicy="strict-origin-when-cross-origin"
               ></iframe>
             </div>
-            <p class="submission-note">If the embedded form does not load well on your device, use the “Open appreciation form” button above.</p>
+            <p class="submission-note">If the embedded form does not load well on your device, use the &ldquo;Open appreciation form&rdquo; button above.</p>
             {% else %}
             <p class="submission-note">A Google Form can be connected here at any time. Once its share link is added, this section can open it directly or embed it on the page.</p>
             {% endif %}

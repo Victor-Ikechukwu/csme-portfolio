@@ -3,4 +3,5 @@ set -euo pipefail
 
 python -m pip install --upgrade pip
 python -m pip install -r requirements.txt
-pelican content -o output -s publishconf.py
+python tools/validate_appreciations.py
+python -m pelican content -o output -s publishconf.py

@@ -34,25 +34,70 @@ def normalize_google_form_url(url: str) -> str:
     return url.replace("/preview", "/viewform")
 
 
+def clean_text(value, fallback: str = "") -> str:
+    if value is None:
+        return fallback
+    text = str(value).strip()
+    return text or fallback
+
+
+def normalize_media_items(media_items) -> list[dict]:
+    normalized = []
+    for media in media_items or []:
+        if not isinstance(media, dict):
+            continue
+        kind = clean_text(media.get("kind")).lower()
+        url = clean_text(media.get("url"))
+        if kind not in {"image", "video"} or not url:
+            continue
+        normalized.append(
+            {
+                "kind": kind,
+                "url": url,
+                "alt": clean_text(media.get("alt")),
+            }
+        )
+    return normalized
+
+
 def load_appreciations():
     entries = load_json("appreciations.json", [])
     normalized = []
     for entry in entries:
+        if not isinstance(entry, dict):
+            continue
         item = dict(entry)
-        created_at = item.get("created_at", "")
+        item["name"] = clean_text(item.get("name"), "Anonymous")
+        item["headline"] = clean_text(item.get("headline"), "Shared appreciation")
+        item["relationship"] = clean_text(item.get("relationship"))
+        item["batch"] = clean_text(item.get("batch"))
+        item["memory_place"] = clean_text(item.get("memory_place"))
+        item["message"] = clean_text(item.get("message"))
+
+        created_at = clean_text(item.get("created_at"))
         display_date = ""
+        sort_key = (0, datetime.min)
         if created_at:
             try:
-                display_date = datetime.strptime(created_at, "%Y-%m-%d").strftime("%d %b %Y")
+                created_at_dt = datetime.strptime(created_at, "%Y-%m-%d")
+                display_date = created_at_dt.strftime("%d %b %Y")
+                sort_key = (1, created_at_dt)
             except ValueError:
                 display_date = created_at
         item["display_date"] = display_date
-        item["media"] = [
-            media
-            for media in item.get("media", [])
-            if media.get("url") and media.get("kind") in {"image", "video"}
-        ]
+        item["_sort_key"] = sort_key
+        item["media"] = normalize_media_items(item.get("media", []))
         normalized.append(item)
+    normalized.sort(
+        key=lambda item: (
+            item["_sort_key"],
+            item["headline"].lower(),
+            item["name"].lower(),
+        ),
+        reverse=True,
+    )
+    for item in normalized:
+        item.pop("_sort_key", None)
     return normalized
 
 
@@ -97,4 +142,37 @@ GOOGLE_FORM_EMBED_URL = build_google_form_embed_url(GOOGLE_FORM_URL)
 INSTITUTE_EMAIL = "victor-csme@dsu.edu.in"
 PERSONAL_EMAIL = "victor.agughasi@gmail.com"
 APPRECIATION_EMAILS = [INSTITUTE_EMAIL, PERSONAL_EMAIL]
+APPRECIATION_STARTERS = [
+    {
+        "label": "Student",
+        "title": "Classroom gratitude",
+        "message": (
+            "Dear Dr. Victor,\n\n"
+            "Thank you for the energy, patience, and encouragement you brought to our classes. "
+            "Your guidance made difficult ideas feel possible, and your belief in us gave me more "
+            "confidence in my own journey.\n\n"
+            "I will always be grateful for the lessons, support, and memories."
+        ),
+    },
+    {
+        "label": "Mentee",
+        "title": "Mentorship reflection",
+        "message": (
+            "Dear Dr. Victor,\n\n"
+            "Thank you for mentoring me with generosity and honesty. You supported not just my academic "
+            "growth, but also my confidence, discipline, and sense of direction.\n\n"
+            "Your advice and encouragement will stay with me for a long time."
+        ),
+    },
+    {
+        "label": "Colleague",
+        "title": "Professional appreciation",
+        "message": (
+            "Dear Dr. Victor,\n\n"
+            "It has been a privilege to work alongside you. Your commitment to students, research, and "
+            "thoughtful collaboration has made a meaningful impact on the people around you.\n\n"
+            "Thank you for your professionalism, kindness, and steady support."
+        ),
+    },
+]
 APPRECIATIONS = load_appreciations()

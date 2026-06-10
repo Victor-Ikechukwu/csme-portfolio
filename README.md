@@ -57,7 +57,20 @@ python -m venv .venv
 .\.venv\Scripts\pelican.exe content -o output -s pelicanconf.py
 ```
 
+Or validate the appreciation archive first, then build:
+
+```powershell
+.\.venv\Scripts\python.exe tools\validate_appreciations.py
+.\.venv\Scripts\python.exe -m pelican content -o output -s pelicanconf.py
+```
+
 You can also use the deployment-ready build script:
+
+```powershell
+.\build.ps1
+```
+
+For Unix-like environments or CI:
 
 ```powershell
 bash build.sh
@@ -90,6 +103,7 @@ Helper files included:
 
 - intake checklist: `content/data/appreciation-intake-template.md`
 - CLI helper: `tools/add_appreciation.py`
+- validator: `tools/validate_appreciations.py`
 
 Example usage:
 

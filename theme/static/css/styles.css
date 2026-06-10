@@ -1014,6 +1014,66 @@ li {
   font-weight: 800;
 }
 
+.starter-library {
+  display: grid;
+  gap: 1rem;
+  margin-top: 1.2rem;
+}
+
+.starter-library-head {
+  display: grid;
+  gap: 0.35rem;
+}
+
+.starter-library-head h4,
+.starter-card h4 {
+  margin: 0;
+  color: var(--heading);
+  font-family: "Fraunces", Georgia, serif;
+  line-height: 1.12;
+  letter-spacing: -0.03em;
+}
+
+.starter-library-head p,
+.starter-status {
+  margin: 0;
+  color: var(--muted);
+}
+
+.starter-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0.85rem;
+}
+
+.starter-card {
+  display: grid;
+  gap: 0.85rem;
+  align-content: start;
+  padding: 1rem;
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  background: color-mix(in srgb, var(--surface-strong) 92%, transparent);
+}
+
+.starter-card-head {
+  display: grid;
+  gap: 0.45rem;
+}
+
+.starter-quote {
+  margin: 0;
+  padding: 0.95rem 1rem;
+  border-radius: 18px;
+  background: color-mix(in srgb, var(--surface) 90%, transparent);
+  color: var(--muted);
+  white-space: pre-line;
+}
+
+.starter-copy-btn {
+  width: 100%;
+}
+
 .submission-note {
   margin-top: 1rem;
   padding: 0.95rem 1rem;
@@ -1759,7 +1819,8 @@ li {
   .form-grid,
   .upload-grid,
   .memory-media-grid,
-  .affiliation-grid {
+  .affiliation-grid,
+  .starter-grid {
     grid-template-columns: 1fr;
   }
 
