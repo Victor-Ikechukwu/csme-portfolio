@@ -546,6 +546,7 @@
                 {% if subline %}<span>{{ " | ".join(subline) }}</span>{% endif %}
               </div>
               <p>{{ entry.message }}</p>
+              <div class="memory-testimony-note">This memory was shared as a written testimony.</div>
               {% if entry.media %}
               <div class="memory-media-grid">
                 {% for media in entry.media %}
@@ -568,8 +569,6 @@
                 </button>
                 {% endfor %}
               </div>
-              {% else %}
-              <div class="memory-empty-media">This memory was shared as a written testimony.</div>
               {% endif %}
             </article>
             {% endfor %}

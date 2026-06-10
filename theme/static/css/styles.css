@@ -1524,6 +1524,14 @@ li {
   color: var(--muted);
 }
 
+.memory-testimony-note {
+  padding: 1rem;
+  border-radius: 18px;
+  border: 1px dashed color-mix(in srgb, var(--accent-3) 40%, transparent);
+  background: color-mix(in srgb, var(--surface) 88%, transparent);
+  color: var(--muted);
+}
+
 .contact-section {
   padding-top: 54px;
 }
