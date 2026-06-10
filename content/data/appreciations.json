@@ -1,0 +1,78 @@
+[
+  {
+    "name": "Ashwini Vishal Hebbali",
+    "headline": "A Teacher I'll Never Forget",
+    "relationship": "Student",
+    "batch": "2023/2027/6th sem",
+    "memory_place": "MIT Mysore",
+    "created_at": "2026-06-07",
+    "message": "I’ll always be your student—forever and ever and ever. Thank you so much for everything. You called my name in every single class, and I never once minded because I always knew you only wanted the absolute best for me❤️😁. I have never seen you as just a professor; to me, you are truly like family. Thank you from the bottom of my heart for your guidance, support, and constant belief in me. Thank you for everything, Sir. ❤️",
+    "media": [
+      {
+        "kind": "image",
+        "url": "https://d33wubrfki0l68.cloudfront.net/d2dd0b85-f3f0-4de3-a2d1-bbcc7a2a588d/One%20with%20victor%20sir.jpeg",
+        "alt": "Ashwini Vishal Hebbali with Dr. Victor Agughasi"
+      }
+    ]
+  },
+  {
+    "name": "Mohammed Furqan",
+    "headline": "I will take it personal.... b looking at me.... i want only problems no peace 😂",
+    "relationship": "Mentee",
+    "batch": "AI 2023",
+    "memory_place": "MIT Mysore",
+    "created_at": "2026-06-06",
+    "message": "Thank you so much, Sir! ❤️ I’m truly grateful that I had the opportunity to be under your guidance throughout my engineering journey. Thank you for always supporting us, motivating us, and helping us in countless ways, both inside and outside the classroom. Beyond academics, I’ll always cherish the fun moments, the laughs, the advice, and the memories we created along the way. You made our engineering life much more enjoyable and memorable. Thank you for your patience, encouragement, and for believing in us even when we doubted ourselves. We’ll carry your lessons and your memories with us wherever life takes us. Wishing you happiness, success, and good health always. Thank you for everything, Sir. We'll definitely miss you! 😊🙏",
+    "media": []
+  },
+  {
+    "name": "Geethanjali M",
+    "headline": "A Memorable Learning Journey!!😍",
+    "relationship": "Student",
+    "batch": "AI 2023 BATCH",
+    "memory_place": "MIT MYSORE",
+    "created_at": "2026-06-06",
+    "message": "Thank you, Victor Sir, for your guidance, support, and inspiration throughout our learning journey. We learned so much from you and will always cherish these memories. We will miss you forever, Sir. 😊",
+    "media": []
+  },
+  {
+    "name": "Mohammed Nabeel N H",
+    "headline": "I want problems & Be looking at my face 😂😭",
+    "relationship": "Mentee",
+    "batch": "AI 2023",
+    "memory_place": "MIT Mysore",
+    "created_at": "2026-06-06",
+    "message": "Victor Sir, thank you for being such an amazing person and a constant source of positivity. Your energy, kindness, and the way you connected with everyone made a lasting impact on us. Wishing you success and happiness in your next journey—you will truly be missed! ❤️",
+    "media": []
+  },
+  {
+    "name": "Punyashree",
+    "headline": "Memories with Mysore maga",
+    "relationship": "Student",
+    "batch": "2023-2027",
+    "memory_place": "Capture memory with vedios and photos",
+    "created_at": "2026-06-06",
+    "message": "Thank u for everything sir 🥹",
+    "media": [
+      {
+        "kind": "image",
+        "url": "https://d33wubrfki0l68.cloudfront.net/5cdbe39f-3213-402d-88d2-0bedf4eec9d9/4885be3a-f864-423f-bfde-e602763a174d.jpeg",
+        "alt": "Memory shared by Punyashree"
+      },
+      {
+        "kind": "image",
+        "url": "https://d33wubrfki0l68.cloudfront.net/cdca41b9-6ca7-4401-afb5-33bc058cbb82/89717fbf-9906-4a2f-b18e-b4638d1ec212.jpeg",
+        "alt": "Second memory shared by Punyashree"
+      },
+      {
+        "kind": "image",
+        "url": "https://d33wubrfki0l68.cloudfront.net/299f0ef5-9088-46bb-b6f9-f8d916edd9fb/IMG_0699.jpeg",
+        "alt": "Third memory shared by Punyashree"
+      },
+      {
+        "kind": "video",
+        "url": "https://d33wubrfki0l68.cloudfront.net/9bb68ee7-ad1e-45cf-9bda-a56f5972aaa0/105bfdfc-e991-4c31-b2d7-8ecd835cbac9.mov"
+      }
+    ]
+  }
+]
