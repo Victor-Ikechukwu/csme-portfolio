@@ -9,11 +9,26 @@ from docx.oxml.ns import qn
 from docx.shared import Cm, Pt, RGBColor
 
 
-OUT_DOCX = Path(r"D:\csme-portfolio\assets\Dr_Victor_Agughasi_CV.docx")
+ROOT = Path(r"D:\csme-portfolio")
+OUT_DOCX = ROOT / "content" / "assets" / "Dr_Victor_Agughasi_CV.docx"
+OUT_PDF = ROOT / "content" / "assets" / "Dr_Victor_Agughasi_DSU_ATS_CV.pdf"
 
 BLUE = RGBColor(31, 78, 121)
 BODY = RGBColor(34, 34, 34)
 MUTED = RGBColor(80, 80, 80)
+LINK = RGBColor(5, 99, 193)
+
+CONTACT_LINKS = {
+    "mobile": "tel:+917892819690",
+    "institute_email": "mailto:victor-csme@dsu.edu.in",
+    "alternate_email": "mailto:victor.agughasi@gmail.com",
+    "scopus": "https://www.scopus.com/authid/detail.uri?authorId=58663521900",
+    "google_scholar": "https://scholar.google.com/citations?user=TQjqJ1UAAAAJ&hl=en",
+    "orcid": "https://orcid.org/0000-0002-1175-3089",
+    "vidwan": "https://vidwan.inflibnet.ac.in/profile/169687",
+    "researchgate": "https://www.researchgate.net/profile/Victor-Ikechukwu-Agughasi",
+    "linkedin": "https://www.linkedin.com/in/victor-ikechukwu-agughasi/",
+}
 
 PUBLICATIONS = [
     {
@@ -105,7 +120,7 @@ def add_bottom_border(paragraph, color="2F5D8A", size="8"):
     bottom.set(qn("w:color"), color)
 
 
-def add_hyperlink(paragraph, text, url, color="0563C1", underline=True):
+def add_hyperlink(paragraph, text, url, size=10.0, color="0563C1", underline=True, bold=False):
     part = paragraph.part
     r_id = part.relate_to(url, RELATIONSHIP_TYPE.HYPERLINK, is_external=True)
 
@@ -134,8 +149,12 @@ def add_hyperlink(paragraph, text, url, color="0563C1", underline=True):
     r_pr.append(r_fonts)
 
     size_el = OxmlElement("w:sz")
-    size_el.set(qn("w:val"), "20")
+    size_el.set(qn("w:val"), str(int(round(size * 2))))
     r_pr.append(size_el)
+
+    if bold:
+        bold_el = OxmlElement("w:b")
+        r_pr.append(bold_el)
 
     run.append(r_pr)
     text_el = OxmlElement("w:t")
@@ -143,6 +162,12 @@ def add_hyperlink(paragraph, text, url, color="0563C1", underline=True):
     run.append(text_el)
     hyperlink.append(run)
     paragraph._p.append(hyperlink)
+
+
+def add_text(paragraph, text, size=10.0, bold=False, italic=False, color=BODY):
+    run = paragraph.add_run(text)
+    set_font(run, size=size, bold=bold, italic=italic, color=color)
+    return run
 
 
 def configure_page(section):
@@ -202,8 +227,38 @@ def centered_line(doc, text, size=10.4, bold=False, italic=False, color=BODY):
     p.alignment = WD_ALIGN_PARAGRAPH.CENTER
     p.paragraph_format.space_after = Pt(0)
     p.paragraph_format.line_spacing = 1.0
-    run = p.add_run(text)
-    set_font(run, size=size, bold=bold, italic=italic, color=color)
+    add_text(p, text, size=size, bold=bold, italic=italic, color=color)
+    return p
+
+
+def centered_segments(doc, segments, size=10.2):
+    p = doc.add_paragraph()
+    p.alignment = WD_ALIGN_PARAGRAPH.CENTER
+    p.paragraph_format.space_after = Pt(0)
+    p.paragraph_format.line_spacing = 1.0
+    for segment in segments:
+        text = segment["text"]
+        url = segment.get("url")
+        if url:
+            add_hyperlink(
+                p,
+                text,
+                url,
+                size=segment.get("size", size),
+                color=segment.get("color", "0563C1"),
+                underline=segment.get("underline", True),
+                bold=segment.get("bold", False),
+            )
+        else:
+            add_text(
+                p,
+                text,
+                size=segment.get("size", size),
+                bold=segment.get("bold", False),
+                italic=segment.get("italic", False),
+                color=segment.get("color", BODY),
+            )
+    return p
 
 
 def body_paragraph(doc, text, italic=False):
@@ -240,9 +295,10 @@ def publication_item(doc, index, title, venue, doi):
     p.paragraph_format.space_after = Pt(0)
     p.paragraph_format.line_spacing = 1.0
 
-    intro = p.add_run(f"\"{title}\", {venue}, DOI: ")
-    set_font(intro, size=10.0)
-    add_hyperlink(p, doi, f"https://doi.org/{doi}")
+    add_text(p, "\"", size=10.0)
+    add_hyperlink(p, title, f"https://doi.org/{doi}", size=10.0, underline=True)
+    add_text(p, f"\", {venue}, DOI: ", size=10.0)
+    add_hyperlink(p, doi, f"https://doi.org/{doi}", size=10.0, underline=True)
     return p
 
 
@@ -280,29 +336,61 @@ def build():
     centered_line(doc, "Dr. Agughasi Victor Ikechukwu", size=20, bold=True)
     centered_line(
         doc,
-        "Senior Assistant Professor | AI for Healthcare | Medical Imaging | Explainable AI | Multimodal and",
+        "Senior Assistant Professor | AI for Healthcare | Medical Imaging | Biomedical Signal Processing",
         size=11.2,
         bold=True,
     )
-    centered_line(doc, "Agentic AI", size=11.2, bold=True)
     centered_line(
         doc,
-        "Department of Computer Science and Medical Engineering, School of Engineering, Dayananda Sagar University, Bangalore, Karnataka-India",
+        "Multimodal & Explainable AI | Trustworthy and Agentic AI | Internet of Medical Things (IoMT)",
+        size=11.2,
+        bold=True,
+    )
+    centered_segments(
+        doc,
+        [
+            {
+                "text": "Department of Computer Science and Medical Engineering, School of Engineering, Dayananda Sagar University, Bangalore, Karnataka-India",
+                "color": BODY,
+                "size": 10.5,
+            }
+        ],
         size=10.5,
     )
-    centered_line(
+    centered_segments(
         doc,
-        "Mobile: (+91) 7892819690 | Email: victor-csme@dsu.edu.in | Alternate: victor.agughasi@gmail.com",
+        [
+            {"text": "Mobile: ", "color": BODY},
+            {"text": "(+91) 7892819690", "url": CONTACT_LINKS["mobile"]},
+            {"text": " | Email: ", "color": BODY},
+            {"text": "victor-csme@dsu.edu.in", "url": CONTACT_LINKS["institute_email"]},
+            {"text": " | Alternate: ", "color": BODY},
+            {"text": "victor.agughasi@gmail.com", "url": CONTACT_LINKS["alternate_email"]},
+        ],
         size=10.2,
     )
-    centered_line(
+    centered_segments(
         doc,
-        "Scopus: Author ID 58663521900 | Google Scholar: TQjqJ1UAAAAJ | ORCID: 0000-0002-1175-3089",
+        [
+            {"text": "Scopus: ", "color": BODY},
+            {"text": "Author ID 58663521900", "url": CONTACT_LINKS["scopus"]},
+            {"text": " | Google Scholar: ", "color": BODY},
+            {"text": "TQjqJ1UAAAAJ", "url": CONTACT_LINKS["google_scholar"]},
+            {"text": " | ORCID: ", "color": BODY},
+            {"text": "0000-0002-1175-3089", "url": CONTACT_LINKS["orcid"]},
+        ],
         size=10.0,
     )
-    centered_line(
+    centered_segments(
         doc,
-        "Vidwan ID: 169687 | ResearchGate: Victor-Ikechukwu-Agughasi | LinkedIn: victor-ikechukwu-agughasi",
+        [
+            {"text": "Vidwan ID: ", "color": BODY},
+            {"text": "169687", "url": CONTACT_LINKS["vidwan"]},
+            {"text": " | ResearchGate: ", "color": BODY},
+            {"text": "Victor-Ikechukwu-Agughasi", "url": CONTACT_LINKS["researchgate"]},
+            {"text": " | LinkedIn: ", "color": BODY},
+            {"text": "victor-ikechukwu-agughasi", "url": CONTACT_LINKS["linkedin"]},
+        ],
         size=10.0,
     )
 
