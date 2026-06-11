@@ -1,5 +1,79 @@
 [
   {
+    "name": "Deeksha P",
+    "headline": "Beyond the syllabus",
+    "relationship": "Student",
+    "batch": "2023",
+    "memory_place": "CSE(AI), Maharaja Institute of Technology, Mysore",
+    "created_at": "2026-06-11",
+    "message": "Thank you for giving thoughtful teaching for us and not only teaching about syllabus you thought us beyond that and also you helped a lot during hack’A’comm and really it was nice experience with you sir and we have lot of memories like making reels etc which we can’t forget  ☺️😊",
+    "media": [
+      {
+        "kind": "image",
+        "url": "assets/deeksha-p-appreciation.jpeg",
+        "alt": "Deeksha P with Dr. Victor Agughasi at Hack 'A' Comm 2026"
+      }
+    ]
+  },
+  {
+    "name": "Akshay M",
+    "headline": "Memories, jokes, and Mysuru Maga",
+    "relationship": "Student",
+    "batch": "2023",
+    "memory_place": "Computer Science (Artificial Intelligence), Maharaja Institute of Technology, Mysore",
+    "created_at": "2026-06-11",
+    "message": "Thank you sir for sharing wonderful memories with you really I take up this moment to say heartfelt thankyou because you are  being  in every step in the college days guiding us , supporting us in all the aspects we are really missing your teaching jokes and reels mysuru maga please continue the sameeeeeeee sir miss you mysuru maga ❤️🥹",
+    "media": [
+      {
+        "kind": "image",
+        "url": "assets/akshay-m-appreciation.jpg",
+        "alt": "Akshay M with Dr. Victor Agughasi"
+      }
+    ]
+  },
+  {
+    "name": "Rithu Prakash R",
+    "headline": "The words we will never forget",
+    "relationship": "Mentee",
+    "batch": "2023 batch",
+    "memory_place": "CSE-AI, Maharaja Institute of Technology, Mysore",
+    "created_at": "2026-06-11",
+    "message": "Dr. Victor sir, \nU are so energetic, enthusiastic and motivating person. U have guided each one of your students to make them best. I think your brain functions like a libraryy coz u know so much information in many of the streams. I wish it would be good if you were here in this college, anyways All The Best for your future sir. and yes u should miss me and my handwriting, also i miss taking attendance in your book. we have danced together, enjoyed the trip, thought of creating good contents too, but yes we didn't make a reel yet. I cherish all the moments i shared with you for my lifetime. lastlyy those unforgettable words to be mentioned- \"NAANU NIMMA PREETHIYA MYSURU MAGA\", \"KEEP LOOKING AT ME\", \"I WILL TAKE IT PERSONAL\", \"I WILL MARK YOU ABSENT TILL THE END OF THIS SEMESTER\", We definitely miss theseee. Thank you for all you support and guidance.",
+    "media": [
+      {
+        "kind": "image",
+        "url": "assets/rithu-prakash-r-appreciation-1.jpeg",
+        "alt": "Rithu Prakash R with Dr. Victor Agughasi and classmates"
+      },
+      {
+        "kind": "image",
+        "url": "assets/rithu-prakash-r-appreciation-2.jpeg",
+        "alt": "Beach trip memory shared by Rithu Prakash R"
+      }
+    ]
+  },
+  {
+    "name": "Rishitha",
+    "headline": "An amazing lecturer and mentor",
+    "relationship": "Mentee",
+    "batch": "2027",
+    "memory_place": "CSE(AI), Maharaja Institute of Technology, Mysore",
+    "created_at": "2026-06-11",
+    "message": "I'm grateful we got a lecturer like youuu, you taught us so many things, we'll miss youuu definitely in this college 😭. We had so much Fun.\nThank you for being an amazing lecturer and mentor. Your classes were always interesting, and your guidance helped me a lot. Beyond academics, the fun conversations and memorable moments made the learning experience truly enjoyable. I'm grateful for your support, encouragement, and the environment you created. Thank you for everything!",
+    "media": [
+      {
+        "kind": "image",
+        "url": "assets/rishitha-appreciation-1.jpeg",
+        "alt": "Rishitha with Dr. Victor Agughasi and classmates in Mysuru"
+      },
+      {
+        "kind": "image",
+        "url": "assets/rishitha-appreciation-2.jpeg",
+        "alt": "Beach trip memory shared by Rishitha"
+      }
+    ]
+  },
+  {
     "name": "Ryan S George",
     "headline": "Preetiya Mysuru Maga",
     "relationship": "Mentee",
