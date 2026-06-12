@@ -1,5 +1,36 @@
 [
   {
+    "name": "Afifa Taskeen",
+    "headline": "Thank you for inspiring us beyond the classroom",
+    "relationship": "Student",
+    "batch": "2027",
+    "memory_place": "Department of Artificial Intelligence, Maharaja Institute of Technology Mysore",
+    "created_at": "2026-06-11",
+    "message": "Dr. Victor,\n\nI am truly grateful to have been your student. You have been more than a teacher to us. Along with academics you always encouraged us to think bigger, work harder, and believe in ourselves.\n\nOne thing I will always remember is how you motivated us to build real-world projects and learn beyond textbooks. As our project coordinator, you guided us at every step and supported us whenever we needed help. I am especially thankful for your support during our AIISH project journey. Being selected for AIISH was a proud moment for us, and your guidance and motivation were an important part of that success.\n\nThe workshops, project discussions, and interactive sessions with you were some of the most memorable moments of our college life. You always made learning interesting and inspired us to explore new technologies and ideas.\n\nThank you for all your guidance, support, and motivation.\n\nWe will truly miss you and the energy you brought to every session.",
+    "media": [
+      {
+        "kind": "image",
+        "url": "assets/afifa-taskeen-appreciation-1.jpg",
+        "alt": "Newspaper clipping memory shared by Afifa Taskeen featuring Dr. Victor Agughasi with students"
+      },
+      {
+        "kind": "image",
+        "url": "assets/afifa-taskeen-appreciation-2.jpeg",
+        "alt": "Afifa Taskeen selfie with Dr. Victor Agughasi and classmates after a session"
+      },
+      {
+        "kind": "image",
+        "url": "assets/afifa-taskeen-appreciation-3.jpg",
+        "alt": "Dr. Victor Agughasi leading a workshop session in Mandya, Karnataka"
+      },
+      {
+        "kind": "image",
+        "url": "assets/afifa-taskeen-appreciation-4.jpg",
+        "alt": "Dr. Victor Agughasi demonstrating a VR headset during an interactive class"
+      }
+    ]
+  },
+  {
     "name": "Deeksha P",
     "headline": "Beyond the syllabus",
     "relationship": "Student",
