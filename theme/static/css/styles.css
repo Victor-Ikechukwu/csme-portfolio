@@ -120,6 +120,10 @@ section[id] {
   scroll-margin-top: 112px;
 }
 
+#appreciation {
+  scroll-margin-top: 112px;
+}
+
 .skip-link {
   position: absolute;
   left: -999px;
