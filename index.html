@@ -3,20 +3,20 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="description" content="{{ SITE_DESCRIPTION }}" />
+  <meta name="description" content="Academic portfolio of Dr. Agughasi Victor Ikechukwu, Senior Assistant Professor, Department of Computer Science and Medical Engineering, School of Engineering, Dayananda Sagar University, Bangalore, Karnataka-India." />
   <meta name="keywords" content="Dr. Agughasi Victor Ikechukwu, AI for Healthcare, Medical Image Analysis, Explainable AI, Quantum Machine Learning, Dayananda Sagar University, Computer Science and Medical Engineering" />
-  <meta name="author" content="{{ AUTHOR }}" />
-  <meta property="og:title" content="{{ SITETITLE }}" />
+  <meta name="author" content="Dr. Agughasi Victor Ikechukwu" />
+  <meta property="og:title" content="Dr. Agughasi Victor Ikechukwu | Academic Portfolio" />
   <meta property="og:description" content="Senior Assistant Professor in Computer Science and Medical Engineering, DSU. Researcher in AI for Healthcare, Medical Imaging, Explainable AI, and Assistive Technology." />
-  <meta property="og:image" content="{{ SITEURL }}/assets/profile.png" />
+  <meta property="og:image" content="./assets/profile.png" />
   <meta property="og:type" content="website" />
   <meta name="color-scheme" content="light dark" />
-  <title>{{ SITETITLE }}</title>
-  <link rel="icon" href="{{ SITEURL }}/assets/csme-logo.png" />
+  <title>Dr. Agughasi Victor Ikechukwu | Academic Portfolio</title>
+  <link rel="icon" href="./assets/csme-logo.png" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="{{ SITEURL }}/theme/css/styles.css?v=20260609b" />
+  <link rel="stylesheet" href="./theme/css/styles.css?v=20260609b" />
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -31,7 +31,7 @@
       "@type": "CollegeOrUniversity",
       "name": "Dayananda Sagar University"
     },
-    "email": "{{ PERSONAL_EMAIL }}",
+    "email": "victor.agughasi@gmail.com",
     "telephone": "+91 7892819690",
     "url": "https://www.linkedin.com/in/victor-ikechukwu-agughasi/",
     "sameAs": [
@@ -54,10 +54,10 @@
   <header class="site-header" id="top">
     <nav class="nav" aria-label="Main navigation">
       <a class="brand" href="#top" aria-label="Home">
-        <img src="{{ SITEURL }}/assets/csme-logo.png" alt="Department of Computer Science and Medical Engineering logo" />
+        <img src="./assets/csme-logo.png" alt="Department of Computer Science and Medical Engineering logo" />
         <span>
           <strong>Dr. Victor Agughasi</strong>
-          <small>{{ SITESUBTITLE }}</small>
+          <small>AI for Healthcare</small>
         </span>
       </a>
       <button class="nav-toggle" type="button" aria-label="Open menu" aria-controls="primary-navigation" aria-expanded="false">&#9776;</button>
@@ -93,7 +93,7 @@
             <a class="mini-badge" href="https://dsu.researgence.ai/facultyProfiles/832161" target="_blank" rel="noopener">DSU Research Profile</a>
           </div>
           <div class="hero-actions">
-            <a class="btn primary" href="{{ SITEURL }}/assets/Dr_Victor_Agughasi_DSU_ATS_CV.pdf" download>Download CV</a>
+            <a class="btn primary" href="./assets/Dr_Victor_Agughasi_DSU_ATS_CV.pdf" download>Download CV</a>
             <a class="btn secondary" href="#affiliation">View DSU Affiliation</a>
             <a class="btn tertiary" href="#appreciation">Open Memory Wall</a>
           </div>
@@ -114,10 +114,10 @@
         </div>
         <div class="hero-card reveal delay-1">
           <div class="portrait-shell">
-            <img class="portrait" src="{{ SITEURL }}/assets/profile.png" alt="Portrait of Dr. Agughasi Victor Ikechukwu" />
+            <img class="portrait" src="./assets/profile.png" alt="Portrait of Dr. Agughasi Victor Ikechukwu" />
           </div>
           <div class="profile-card">
-            <img src="{{ SITEURL }}/assets/csme-logo.png" alt="CSME logo" />
+            <img src="./assets/csme-logo.png" alt="CSME logo" />
             <div>
               <strong>Dayananda Sagar University</strong>
               <span>Department of Computer Science and Medical Engineering</span>
@@ -465,13 +465,9 @@
             </p>
             <div class="submission-quickstart">
               <div class="submission-actions">
-                {% if GOOGLE_FORM_URL %}
-                <a class="btn primary" href="{{ GOOGLE_FORM_URL }}" target="_blank" rel="noopener">Open appreciation form</a>
-                {% else %}
-                <a class="btn primary" href="mailto:{{ INSTITUTE_EMAIL }}?subject=Appreciation%20for%20Dr.%20Victor%20Agughasi">Send a quick note by email</a>
-                {% endif %}
-                <a class="btn secondary" href="{{ GOOGLE_DRIVE_URL }}" target="_blank" rel="noopener">Upload photos or videos</a>
-                <a class="btn tertiary" href="mailto:{{ PERSONAL_EMAIL }}">Use personal email instead</a>
+                <a class="btn primary" href="https://docs.google.com/forms/d/12Fx4Bqw3XzyIiRsjnuhJRJ4vxhbHpolPXP74soG6k8o/viewform" target="_blank" rel="noopener">Open appreciation form</a>
+                <a class="btn secondary" href="https://drive.google.com/drive/folders/1gpqrk9WKei1q4uIv2ijzWXWO1vQawtdc?usp=sharing" target="_blank" rel="noopener">Upload photos or videos</a>
+                <a class="btn tertiary" href="mailto:victor.agughasi@gmail.com">Use personal email instead</a>
               </div>
               <div class="submission-hints" aria-label="Suggested form fields">
                 <span>Name and relationship</span>
@@ -485,32 +481,54 @@
                 <p>Use one of these starter notes as your default message, then personalize it before submitting the form or emailing it.</p>
               </div>
               <div class="starter-grid">
-                {% for starter in APPRECIATION_STARTERS %}
                 <article class="starter-card">
                   <div class="starter-card-head">
-                    <span class="memory-chip">{{ starter.label }}</span>
-                    <h4>{{ starter.title }}</h4>
+                    <span class="memory-chip">Student</span>
+                    <h4>Classroom gratitude</h4>
                   </div>
-                  <blockquote class="starter-quote" data-starter-text>{{ starter.message }}</blockquote>
+                  <blockquote class="starter-quote" data-starter-text>Dear Dr. Victor,
+
+Thank you for the energy, patience, and encouragement you brought to our classes. Your guidance made difficult ideas feel possible, and your belief in us gave me more confidence in my own journey.
+
+I will always be grateful for the lessons, support, and memories.</blockquote>
                   <button class="btn secondary starter-copy-btn" type="button" data-copy-starter>Copy starter</button>
                 </article>
-                {% endfor %}
+                <article class="starter-card">
+                  <div class="starter-card-head">
+                    <span class="memory-chip">Mentee</span>
+                    <h4>Mentorship reflection</h4>
+                  </div>
+                  <blockquote class="starter-quote" data-starter-text>Dear Dr. Victor,
+
+Thank you for mentoring me with generosity and honesty. You supported not just my academic growth, but also my confidence, discipline, and sense of direction.
+
+Your advice and encouragement will stay with me for a long time.</blockquote>
+                  <button class="btn secondary starter-copy-btn" type="button" data-copy-starter>Copy starter</button>
+                </article>
+                <article class="starter-card">
+                  <div class="starter-card-head">
+                    <span class="memory-chip">Colleague</span>
+                    <h4>Professional appreciation</h4>
+                  </div>
+                  <blockquote class="starter-quote" data-starter-text>Dear Dr. Victor,
+
+It has been a privilege to work alongside you. Your commitment to students, research, and thoughtful collaboration has made a meaningful impact on the people around you.
+
+Thank you for your professionalism, kindness, and steady support.</blockquote>
+                  <button class="btn secondary starter-copy-btn" type="button" data-copy-starter>Copy starter</button>
+                </article>
               </div>
               <p class="starter-status" data-starter-status aria-live="polite"></p>
             </div>
-            {% if GOOGLE_FORM_EMBED_URL %}
             <div class="form-embed-shell">
               <iframe
-                src="{{ GOOGLE_FORM_EMBED_URL }}"
+                src="https://docs.google.com/forms/d/12Fx4Bqw3XzyIiRsjnuhJRJ4vxhbHpolPXP74soG6k8o/viewform?embedded=true"
                 title="Appreciation form"
                 loading="lazy"
                 referrerpolicy="strict-origin-when-cross-origin"
               ></iframe>
             </div>
             <p class="submission-note">If the embedded form does not load well on your device, use the &ldquo;Open appreciation form&rdquo; button above.</p>
-            {% else %}
-            <p class="submission-note">A Google Form can be connected here at any time. Once its share link is added, this section can open it directly or embed it on the page.</p>
-            {% endif %}
           </article>
         </div>
 
@@ -523,59 +541,450 @@
             <p>Each published note below is part of a curated, repository-backed archive.</p>
           </div>
 
-          {% if APPRECIATIONS %}
           <div class="memory-grid" aria-live="polite">
-            {% for entry in APPRECIATIONS %}
             <article class="memory-card">
               <div class="memory-card-header">
                 <div>
-                  <h4>{{ entry.headline }}</h4>
+                  <h4>Grateful for your guidance and support</h4>
                   <div class="memory-meta">
-                    {% if entry.relationship %}<span class="memory-chip">{{ entry.relationship }}</span>{% endif %}
-                    {% if entry.batch %}<span class="memory-chip">{{ entry.batch }}</span>{% endif %}
-                    {% if entry.memory_place %}<span class="memory-chip">{{ entry.memory_place }}</span>{% endif %}
-                  </div>
+<span class="memory-chip">Student</span><span class="memory-chip">2026</span><span class="memory-chip">CSE-AI, Maharaja Institute of Technology, Mysore</span>                  </div>
                 </div>
-                {% if entry.display_date %}<div class="memory-date">{{ entry.display_date }}</div>{% endif %}
-              </div>
+<div class="memory-date">16 Jun 2026</div>              </div>
               <div class="memory-author">
-                <strong>{{ entry.name }}</strong>
-                {% set subline = [] %}
-                {% if entry.relationship %}{% set _ = subline.append(entry.relationship) %}{% endif %}
-                {% if entry.batch %}{% set _ = subline.append(entry.batch) %}{% endif %}
-                {% if subline %}<span>{{ " | ".join(subline) }}</span>{% endif %}
-              </div>
-              <p>{{ entry.message }}</p>
+                <strong>Sanjana R</strong>
+<span>Student | 2026</span>              </div>
+              <p>We would like to express our sincere gratitude for your valuable guidance and support throughout the technical aspects of our work. Your patience, expertise, and willingness to help us whenever we faced challenges made a significant difference in our learning journey. The knowledge and insights you shared not only helped us complete our work successfully but also enhanced our understanding and confidence.
+Thank you for dedicating your time and effort to guide us. We truly appreciate your encouragement and constant support. We are grateful to have had the opportunity to learn from you.
+With heartfelt thanks and respect.</p>
               <div class="memory-testimony-note">This memory was shared as a written testimony.</div>
-              {% if entry.media %}
               <div class="memory-media-grid">
-                {% for media in entry.media %}
                 <button
                   class="memory-media-button"
                   type="button"
-                  data-media-kind="{{ media.kind }}"
-                  data-media-url="{{ media.url }}"
-                  data-media-title="{{ entry.headline }}"
-                  data-media-caption="{{ entry.name }}"
+                  data-media-kind="image"
+                  data-media-url="assets/sanjana-r-appreciation-1.jpg"
+                  data-media-title="Grateful for your guidance and support"
+                  data-media-caption="Sanjana R"
                 >
-                  {% if media.kind == "video" %}
+                  <img src="assets/sanjana-r-appreciation-1.jpg" alt="Dr. Victor Agughasi writing on a classroom blackboard during a lecture while students watch" loading="lazy" decoding="async" />
+                </button>
+              </div>
+            </article>
+            <article class="memory-card">
+              <div class="memory-card-header">
+                <div>
+                  <h4>Once a Mysuru Maga, always our Mysuru Maga</h4>
+                  <div class="memory-meta">
+<span class="memory-chip">Mentee</span><span class="memory-chip">2026</span><span class="memory-chip">CSE(AI), Maharaja Institute of Technology, Mysore</span>                  </div>
+                </div>
+<div class="memory-date">13 Jun 2026</div>              </div>
+              <div class="memory-author">
+                <strong>Sanjana M</strong>
+<span>Mentee | 2026</span>              </div>
+              <p>Dr. Victor Sir has been more than just a lecturer to us. He has been a mentor, motivator, and someone who made learning enjoyable. His passion for teaching and sharing knowledge has inspired many students, including me.
+
+One of the things that makes him unique is his wonderful sense of humor. No matter how stressful classes or assignments got, he always found a way to make us laugh. We will never forget his famous dialogue, "I WILL TAKE IT PERSONALLY," which became an iconic part of our classroom experience.
+
+I used to argue with him quite a lot, and he never hesitated to scold me when needed. Looking back, those moments taught me valuable lessons and showed how much he genuinely cared about his students. Despite being strict at times, he always wanted the best for us.
+
+And of course, who can forget "Mysuru Maga", the title he proudly gave himself and even used for his Instagram page? It became a part of his identity among students and always brought smiles to our faces.
+
+Dr. Victor Sir is a kind-hearted human being whose impact goes far beyond academics. As a lecturer from Nigeria who embraced our culture with such enthusiasm, he created a special connection with his students. Thank you, Sir, for your guidance, encouragement, laughter, and the countless lessons you've shared with us. Your influence will always be remembered and appreciated. And thank you for being an amazing teacher and human being. Wishing you continued success and happiness.
+
+Once a Mysuru Maga, always our Mysuru Maga! ❤️</p>
+              <div class="memory-testimony-note">This memory was shared as a written testimony.</div>
+              <div class="memory-media-grid">
+                <button
+                  class="memory-media-button"
+                  type="button"
+                  data-media-kind="image"
+                  data-media-url="assets/sanjana-m-appreciation-1.jpg"
+                  data-media-title="Once a Mysuru Maga, always our Mysuru Maga"
+                  data-media-caption="Sanjana M"
+                >
+                  <img src="assets/sanjana-m-appreciation-1.jpg" alt="Dr. Victor Agughasi with two students during a decorated campus celebration" loading="lazy" decoding="async" />
+                </button>
+                <button
+                  class="memory-media-button"
+                  type="button"
+                  data-media-kind="image"
+                  data-media-url="assets/sanjana-m-appreciation-2.jpg"
+                  data-media-title="Once a Mysuru Maga, always our Mysuru Maga"
+                  data-media-caption="Sanjana M"
+                >
+                  <img src="assets/sanjana-m-appreciation-2.jpg" alt="Dr. Victor Agughasi posing with students during a college celebration at MIT Mysore" loading="lazy" decoding="async" />
+                </button>
+                <button
+                  class="memory-media-button"
+                  type="button"
+                  data-media-kind="image"
+                  data-media-url="assets/sanjana-m-appreciation-3.jpg"
+                  data-media-title="Once a Mysuru Maga, always our Mysuru Maga"
+                  data-media-caption="Sanjana M"
+                >
+                  <img src="assets/sanjana-m-appreciation-3.jpg" alt="Dr. Victor Agughasi checking notes and attendance during class" loading="lazy" decoding="async" />
+                </button>
+                <button
+                  class="memory-media-button"
+                  type="button"
+                  data-media-kind="image"
+                  data-media-url="assets/sanjana-m-appreciation-4.jpg"
+                  data-media-title="Once a Mysuru Maga, always our Mysuru Maga"
+                  data-media-caption="Sanjana M"
+                >
+                  <img src="assets/sanjana-m-appreciation-4.jpg" alt="Dr. Victor Agughasi writing on the classroom blackboard during a lecture" loading="lazy" decoding="async" />
+                </button>
+              </div>
+            </article>
+            <article class="memory-card">
+              <div class="memory-card-header">
+                <div>
+                  <h4>The words we will never forget</h4>
+                  <div class="memory-meta">
+<span class="memory-chip">Mentee</span><span class="memory-chip">2023 batch</span><span class="memory-chip">CSE-AI, Maharaja Institute of Technology, Mysore</span>                  </div>
+                </div>
+<div class="memory-date">11 Jun 2026</div>              </div>
+              <div class="memory-author">
+                <strong>Rithu Prakash R</strong>
+<span>Mentee | 2023 batch</span>              </div>
+              <p>Dr. Victor sir, 
+U are so energetic, enthusiastic and motivating person. U have guided each one of your students to make them best. I think your brain functions like a libraryy coz u know so much information in many of the streams. I wish it would be good if you were here in this college, anyways All The Best for your future sir. and yes u should miss me and my handwriting, also i miss taking attendance in your book. we have danced together, enjoyed the trip, thought of creating good contents too, but yes we didn't make a reel yet. I cherish all the moments i shared with you for my lifetime. lastlyy those unforgettable words to be mentioned- "NAANU NIMMA PREETHIYA MYSURU MAGA", "KEEP LOOKING AT ME", "I WILL TAKE IT PERSONAL", "I WILL MARK YOU ABSENT TILL THE END OF THIS SEMESTER", We definitely miss theseee. Thank you for all you support and guidance.</p>
+              <div class="memory-testimony-note">This memory was shared as a written testimony.</div>
+              <div class="memory-media-grid">
+                <button
+                  class="memory-media-button"
+                  type="button"
+                  data-media-kind="image"
+                  data-media-url="assets/rithu-prakash-r-appreciation-1.jpeg"
+                  data-media-title="The words we will never forget"
+                  data-media-caption="Rithu Prakash R"
+                >
+                  <img src="assets/rithu-prakash-r-appreciation-1.jpeg" alt="Rithu Prakash R with Dr. Victor Agughasi and classmates" loading="lazy" decoding="async" />
+                </button>
+                <button
+                  class="memory-media-button"
+                  type="button"
+                  data-media-kind="image"
+                  data-media-url="assets/rithu-prakash-r-appreciation-2.jpeg"
+                  data-media-title="The words we will never forget"
+                  data-media-caption="Rithu Prakash R"
+                >
+                  <img src="assets/rithu-prakash-r-appreciation-2.jpeg" alt="Beach trip memory shared by Rithu Prakash R" loading="lazy" decoding="async" />
+                </button>
+              </div>
+            </article>
+            <article class="memory-card">
+              <div class="memory-card-header">
+                <div>
+                  <h4>Thank you for inspiring us beyond the classroom</h4>
+                  <div class="memory-meta">
+<span class="memory-chip">Student</span><span class="memory-chip">2027</span><span class="memory-chip">Department of Artificial Intelligence, Maharaja Institute of Technology Mysore</span>                  </div>
+                </div>
+<div class="memory-date">11 Jun 2026</div>              </div>
+              <div class="memory-author">
+                <strong>Afifa Taskeen</strong>
+<span>Student | 2027</span>              </div>
+              <p>Dr. Victor,
+
+I am truly grateful to have been your student. You have been more than a teacher to us. Along with academics you always encouraged us to think bigger, work harder, and believe in ourselves.
+
+One thing I will always remember is how you motivated us to build real-world projects and learn beyond textbooks. As our project coordinator, you guided us at every step and supported us whenever we needed help. I am especially thankful for your support during our AIISH project journey. Being selected for AIISH was a proud moment for us, and your guidance and motivation were an important part of that success.
+
+The workshops, project discussions, and interactive sessions with you were some of the most memorable moments of our college life. You always made learning interesting and inspired us to explore new technologies and ideas.
+
+Thank you for all your guidance, support, and motivation.
+
+We will truly miss you and the energy you brought to every session.</p>
+              <div class="memory-testimony-note">This memory was shared as a written testimony.</div>
+              <div class="memory-media-grid">
+                <button
+                  class="memory-media-button"
+                  type="button"
+                  data-media-kind="image"
+                  data-media-url="assets/afifa-taskeen-appreciation-1.jpg"
+                  data-media-title="Thank you for inspiring us beyond the classroom"
+                  data-media-caption="Afifa Taskeen"
+                >
+                  <img src="assets/afifa-taskeen-appreciation-1.jpg" alt="Newspaper clipping memory shared by Afifa Taskeen featuring Dr. Victor Agughasi with students" loading="lazy" decoding="async" />
+                </button>
+                <button
+                  class="memory-media-button"
+                  type="button"
+                  data-media-kind="image"
+                  data-media-url="assets/afifa-taskeen-appreciation-2.jpeg"
+                  data-media-title="Thank you for inspiring us beyond the classroom"
+                  data-media-caption="Afifa Taskeen"
+                >
+                  <img src="assets/afifa-taskeen-appreciation-2.jpeg" alt="Afifa Taskeen selfie with Dr. Victor Agughasi and classmates after a session" loading="lazy" decoding="async" />
+                </button>
+                <button
+                  class="memory-media-button"
+                  type="button"
+                  data-media-kind="image"
+                  data-media-url="assets/afifa-taskeen-appreciation-3.jpg"
+                  data-media-title="Thank you for inspiring us beyond the classroom"
+                  data-media-caption="Afifa Taskeen"
+                >
+                  <img src="assets/afifa-taskeen-appreciation-3.jpg" alt="Dr. Victor Agughasi leading a workshop session in Mandya, Karnataka" loading="lazy" decoding="async" />
+                </button>
+                <button
+                  class="memory-media-button"
+                  type="button"
+                  data-media-kind="image"
+                  data-media-url="assets/afifa-taskeen-appreciation-4.jpg"
+                  data-media-title="Thank you for inspiring us beyond the classroom"
+                  data-media-caption="Afifa Taskeen"
+                >
+                  <img src="assets/afifa-taskeen-appreciation-4.jpg" alt="Dr. Victor Agughasi demonstrating a VR headset during an interactive class" loading="lazy" decoding="async" />
+                </button>
+              </div>
+            </article>
+            <article class="memory-card">
+              <div class="memory-card-header">
+                <div>
+                  <h4>Memories, jokes, and Mysuru Maga</h4>
+                  <div class="memory-meta">
+<span class="memory-chip">Student</span><span class="memory-chip">2023</span><span class="memory-chip">Computer Science (Artificial Intelligence), Maharaja Institute of Technology, Mysore</span>                  </div>
+                </div>
+<div class="memory-date">11 Jun 2026</div>              </div>
+              <div class="memory-author">
+                <strong>Akshay M</strong>
+<span>Student | 2023</span>              </div>
+              <p>Thank you sir for sharing wonderful memories with you really I take up this moment to say heartfelt thankyou because you are  being  in every step in the college days guiding us , supporting us in all the aspects we are really missing your teaching jokes and reels mysuru maga please continue the sameeeeeeee sir miss you mysuru maga ❤️🥹</p>
+              <div class="memory-testimony-note">This memory was shared as a written testimony.</div>
+              <div class="memory-media-grid">
+                <button
+                  class="memory-media-button"
+                  type="button"
+                  data-media-kind="image"
+                  data-media-url="assets/akshay-m-appreciation.jpg"
+                  data-media-title="Memories, jokes, and Mysuru Maga"
+                  data-media-caption="Akshay M"
+                >
+                  <img src="assets/akshay-m-appreciation.jpg" alt="Akshay M with Dr. Victor Agughasi" loading="lazy" decoding="async" />
+                </button>
+              </div>
+            </article>
+            <article class="memory-card">
+              <div class="memory-card-header">
+                <div>
+                  <h4>Beyond the syllabus</h4>
+                  <div class="memory-meta">
+<span class="memory-chip">Student</span><span class="memory-chip">2023</span><span class="memory-chip">CSE(AI), Maharaja Institute of Technology, Mysore</span>                  </div>
+                </div>
+<div class="memory-date">11 Jun 2026</div>              </div>
+              <div class="memory-author">
+                <strong>Deeksha P</strong>
+<span>Student | 2023</span>              </div>
+              <p>Thank you for giving thoughtful teaching for us and not only teaching about syllabus you thought us beyond that and also you helped a lot during hack’A’comm and really it was nice experience with you sir and we have lot of memories like making reels etc which we can’t forget  ☺️😊</p>
+              <div class="memory-testimony-note">This memory was shared as a written testimony.</div>
+              <div class="memory-media-grid">
+                <button
+                  class="memory-media-button"
+                  type="button"
+                  data-media-kind="image"
+                  data-media-url="assets/deeksha-p-appreciation.jpeg"
+                  data-media-title="Beyond the syllabus"
+                  data-media-caption="Deeksha P"
+                >
+                  <img src="assets/deeksha-p-appreciation.jpeg" alt="Deeksha P with Dr. Victor Agughasi at Hack 'A' Comm 2026" loading="lazy" decoding="async" />
+                </button>
+              </div>
+            </article>
+            <article class="memory-card">
+              <div class="memory-card-header">
+                <div>
+                  <h4>An amazing lecturer and mentor</h4>
+                  <div class="memory-meta">
+<span class="memory-chip">Mentee</span><span class="memory-chip">2027</span><span class="memory-chip">CSE(AI), Maharaja Institute of Technology, Mysore</span>                  </div>
+                </div>
+<div class="memory-date">11 Jun 2026</div>              </div>
+              <div class="memory-author">
+                <strong>Rishitha</strong>
+<span>Mentee | 2027</span>              </div>
+              <p>I'm grateful we got a lecturer like youuu, you taught us so many things, we'll miss youuu definitely in this college 😭. We had so much Fun.
+Thank you for being an amazing lecturer and mentor. Your classes were always interesting, and your guidance helped me a lot. Beyond academics, the fun conversations and memorable moments made the learning experience truly enjoyable. I'm grateful for your support, encouragement, and the environment you created. Thank you for everything!</p>
+              <div class="memory-testimony-note">This memory was shared as a written testimony.</div>
+              <div class="memory-media-grid">
+                <button
+                  class="memory-media-button"
+                  type="button"
+                  data-media-kind="image"
+                  data-media-url="assets/rishitha-appreciation-1.jpeg"
+                  data-media-title="An amazing lecturer and mentor"
+                  data-media-caption="Rishitha"
+                >
+                  <img src="assets/rishitha-appreciation-1.jpeg" alt="Rishitha with Dr. Victor Agughasi and classmates in Mysuru" loading="lazy" decoding="async" />
+                </button>
+                <button
+                  class="memory-media-button"
+                  type="button"
+                  data-media-kind="image"
+                  data-media-url="assets/rishitha-appreciation-2.jpeg"
+                  data-media-title="An amazing lecturer and mentor"
+                  data-media-caption="Rishitha"
+                >
+                  <img src="assets/rishitha-appreciation-2.jpeg" alt="Beach trip memory shared by Rishitha" loading="lazy" decoding="async" />
+                </button>
+              </div>
+            </article>
+            <article class="memory-card">
+              <div class="memory-card-header">
+                <div>
+                  <h4>Preetiya Mysuru Maga</h4>
+                  <div class="memory-meta">
+<span class="memory-chip">Mentee</span><span class="memory-chip">2023-2026</span><span class="memory-chip">CSE(AI), Maharaja Institute of Technology, Mysore</span>                  </div>
+                </div>
+<div class="memory-date">10 Jun 2026</div>              </div>
+              <div class="memory-author">
+                <strong>Ryan S George</strong>
+<span>Mentee | 2023-2026</span>              </div>
+              <p>Dr Victor sir is actually one of the professors who pushes you to go beyond your horizions and do better. He is a person who is dependable and reliable, he always teaches us to think outside the box. If you attend his lectures, you get to see how active and enthusiastic he is about teaching and connecting related dots about the topic he is teaching with real-time examples. He is also jovial and kind for students who want to learn more and more. He is one of those professors that you look back and remember not only for his teaching, but also for the impact he leaves on his students. Sir is always easy to get along with and always shows his support for his students, hence he is popularly know as Preetiya Mysuru Maga. Its been an honour and privilege to have learnt so much from him, and I wish sir all the best for all of his future endeavours.</p>
+              <div class="memory-testimony-note">This memory was shared as a written testimony.</div>
+              <div class="memory-media-grid">
+                <button
+                  class="memory-media-button"
+                  type="button"
+                  data-media-kind="video"
+                  data-media-url="assets/ryan-s-george-appreciation.mp4"
+                  data-media-title="Preetiya Mysuru Maga"
+                  data-media-caption="Ryan S George"
+                >
                   <div class="memory-video-placeholder">
                     <span aria-hidden="true"></span>
                     <strong>Video memory</strong>
                   </div>
-                  {% else %}
-                  <img src="{{ media.url }}" alt="{{ media.alt or entry.headline }}" loading="lazy" decoding="async" />
-                  {% endif %}
                 </button>
-                {% endfor %}
               </div>
-              {% endif %}
             </article>
-            {% endfor %}
+            <article class="memory-card">
+              <div class="memory-card-header">
+                <div>
+                  <h4>A Teacher I'll Never Forget</h4>
+                  <div class="memory-meta">
+<span class="memory-chip">Student</span><span class="memory-chip">2023/2027/6th sem</span><span class="memory-chip">MIT Mysore</span>                  </div>
+                </div>
+<div class="memory-date">07 Jun 2026</div>              </div>
+              <div class="memory-author">
+                <strong>Ashwini Vishal Hebbali</strong>
+<span>Student | 2023/2027/6th sem</span>              </div>
+              <p>I’ll always be your student—forever and ever and ever. Thank you so much for everything. You called my name in every single class, and I never once minded because I always knew you only wanted the absolute best for me❤️😁. I have never seen you as just a professor; to me, you are truly like family. Thank you from the bottom of my heart for your guidance, support, and constant belief in me. Thank you for everything, Sir. ❤️</p>
+              <div class="memory-testimony-note">This memory was shared as a written testimony.</div>
+              <div class="memory-media-grid">
+                <button
+                  class="memory-media-button"
+                  type="button"
+                  data-media-kind="image"
+                  data-media-url="https://d33wubrfki0l68.cloudfront.net/d2dd0b85-f3f0-4de3-a2d1-bbcc7a2a588d/One%20with%20victor%20sir.jpeg"
+                  data-media-title="A Teacher I'll Never Forget"
+                  data-media-caption="Ashwini Vishal Hebbali"
+                >
+                  <img src="https://d33wubrfki0l68.cloudfront.net/d2dd0b85-f3f0-4de3-a2d1-bbcc7a2a588d/One%20with%20victor%20sir.jpeg" alt="Ashwini Vishal Hebbali with Dr. Victor Agughasi" loading="lazy" decoding="async" />
+                </button>
+              </div>
+            </article>
+            <article class="memory-card">
+              <div class="memory-card-header">
+                <div>
+                  <h4>Memories with Mysore maga</h4>
+                  <div class="memory-meta">
+<span class="memory-chip">Student</span><span class="memory-chip">2023-2027</span><span class="memory-chip">Capture memory with vedios and photos</span>                  </div>
+                </div>
+<div class="memory-date">06 Jun 2026</div>              </div>
+              <div class="memory-author">
+                <strong>Punyashree</strong>
+<span>Student | 2023-2027</span>              </div>
+              <p>Thank u for everything sir 🥹</p>
+              <div class="memory-testimony-note">This memory was shared as a written testimony.</div>
+              <div class="memory-media-grid">
+                <button
+                  class="memory-media-button"
+                  type="button"
+                  data-media-kind="image"
+                  data-media-url="https://d33wubrfki0l68.cloudfront.net/5cdbe39f-3213-402d-88d2-0bedf4eec9d9/4885be3a-f864-423f-bfde-e602763a174d.jpeg"
+                  data-media-title="Memories with Mysore maga"
+                  data-media-caption="Punyashree"
+                >
+                  <img src="https://d33wubrfki0l68.cloudfront.net/5cdbe39f-3213-402d-88d2-0bedf4eec9d9/4885be3a-f864-423f-bfde-e602763a174d.jpeg" alt="Memory shared by Punyashree" loading="lazy" decoding="async" />
+                </button>
+                <button
+                  class="memory-media-button"
+                  type="button"
+                  data-media-kind="image"
+                  data-media-url="https://d33wubrfki0l68.cloudfront.net/cdca41b9-6ca7-4401-afb5-33bc058cbb82/89717fbf-9906-4a2f-b18e-b4638d1ec212.jpeg"
+                  data-media-title="Memories with Mysore maga"
+                  data-media-caption="Punyashree"
+                >
+                  <img src="https://d33wubrfki0l68.cloudfront.net/cdca41b9-6ca7-4401-afb5-33bc058cbb82/89717fbf-9906-4a2f-b18e-b4638d1ec212.jpeg" alt="Second memory shared by Punyashree" loading="lazy" decoding="async" />
+                </button>
+                <button
+                  class="memory-media-button"
+                  type="button"
+                  data-media-kind="image"
+                  data-media-url="https://d33wubrfki0l68.cloudfront.net/299f0ef5-9088-46bb-b6f9-f8d916edd9fb/IMG_0699.jpeg"
+                  data-media-title="Memories with Mysore maga"
+                  data-media-caption="Punyashree"
+                >
+                  <img src="https://d33wubrfki0l68.cloudfront.net/299f0ef5-9088-46bb-b6f9-f8d916edd9fb/IMG_0699.jpeg" alt="Third memory shared by Punyashree" loading="lazy" decoding="async" />
+                </button>
+                <button
+                  class="memory-media-button"
+                  type="button"
+                  data-media-kind="video"
+                  data-media-url="https://d33wubrfki0l68.cloudfront.net/9bb68ee7-ad1e-45cf-9bda-a56f5972aaa0/105bfdfc-e991-4c31-b2d7-8ecd835cbac9.mov"
+                  data-media-title="Memories with Mysore maga"
+                  data-media-caption="Punyashree"
+                >
+                  <div class="memory-video-placeholder">
+                    <span aria-hidden="true"></span>
+                    <strong>Video memory</strong>
+                  </div>
+                </button>
+              </div>
+            </article>
+            <article class="memory-card">
+              <div class="memory-card-header">
+                <div>
+                  <h4>I will take it personal.... b looking at me.... i want only problems no peace 😂</h4>
+                  <div class="memory-meta">
+<span class="memory-chip">Mentee</span><span class="memory-chip">AI 2023</span><span class="memory-chip">MIT Mysore</span>                  </div>
+                </div>
+<div class="memory-date">06 Jun 2026</div>              </div>
+              <div class="memory-author">
+                <strong>Mohammed Furqan</strong>
+<span>Mentee | AI 2023</span>              </div>
+              <p>Thank you so much, Sir! ❤️ I’m truly grateful that I had the opportunity to be under your guidance throughout my engineering journey. Thank you for always supporting us, motivating us, and helping us in countless ways, both inside and outside the classroom. Beyond academics, I’ll always cherish the fun moments, the laughs, the advice, and the memories we created along the way. You made our engineering life much more enjoyable and memorable. Thank you for your patience, encouragement, and for believing in us even when we doubted ourselves. We’ll carry your lessons and your memories with us wherever life takes us. Wishing you happiness, success, and good health always. Thank you for everything, Sir. We'll definitely miss you! 😊🙏</p>
+              <div class="memory-testimony-note">This memory was shared as a written testimony.</div>
+            </article>
+            <article class="memory-card">
+              <div class="memory-card-header">
+                <div>
+                  <h4>I want problems & Be looking at my face 😂😭</h4>
+                  <div class="memory-meta">
+<span class="memory-chip">Mentee</span><span class="memory-chip">AI 2023</span><span class="memory-chip">MIT Mysore</span>                  </div>
+                </div>
+<div class="memory-date">06 Jun 2026</div>              </div>
+              <div class="memory-author">
+                <strong>Mohammed Nabeel N H</strong>
+<span>Mentee | AI 2023</span>              </div>
+              <p>Victor Sir, thank you for being such an amazing person and a constant source of positivity. Your energy, kindness, and the way you connected with everyone made a lasting impact on us. Wishing you success and happiness in your next journey—you will truly be missed! ❤️</p>
+              <div class="memory-testimony-note">This memory was shared as a written testimony.</div>
+            </article>
+            <article class="memory-card">
+              <div class="memory-card-header">
+                <div>
+                  <h4>A Memorable Learning Journey!!😍</h4>
+                  <div class="memory-meta">
+<span class="memory-chip">Student</span><span class="memory-chip">AI 2023 BATCH</span><span class="memory-chip">MIT MYSORE</span>                  </div>
+                </div>
+<div class="memory-date">06 Jun 2026</div>              </div>
+              <div class="memory-author">
+                <strong>Geethanjali M</strong>
+<span>Student | AI 2023 BATCH</span>              </div>
+              <p>Thank you, Victor Sir, for your guidance, support, and inspiration throughout our learning journey. We learned so much from you and will always cherish these memories. We will miss you forever, Sir. 😊</p>
+              <div class="memory-testimony-note">This memory was shared as a written testimony.</div>
+            </article>
           </div>
-          {% else %}
-          <p class="memory-state">No public appreciations have been published yet. Send the first curated note by email to begin the archive.</p>
-          {% endif %}
         </div>
       </div>
     </section>
@@ -589,11 +998,11 @@
           <p>For appreciations or archival submissions, either the institute or personal email can be used. Both routes remain independent of hosted form subscriptions.</p>
         </div>
         <div class="contact-actions">
-          <a class="btn primary" href="mailto:{{ INSTITUTE_EMAIL }}">{{ INSTITUTE_EMAIL }}</a>
-          <a class="btn secondary" href="mailto:{{ PERSONAL_EMAIL }}">{{ PERSONAL_EMAIL }}</a>
+          <a class="btn primary" href="mailto:victor-csme@dsu.edu.in">victor-csme@dsu.edu.in</a>
+          <a class="btn secondary" href="mailto:victor.agughasi@gmail.com">victor.agughasi@gmail.com</a>
           <a class="btn secondary" href="tel:+917892819690">+91 7892819690</a>
           <a class="btn secondary" href="https://dsu.edu.in/agughasi-victor" target="_blank" rel="noopener">Official DSU page</a>
-          <a class="btn ghost" href="{{ SITEURL }}/assets/Dr_Victor_Agughasi_DSU_ATS_CV.pdf" download>Download CV</a>
+          <a class="btn ghost" href="./assets/Dr_Victor_Agughasi_DSU_ATS_CV.pdf" download>Download CV</a>
         </div>
       </div>
     </section>
@@ -601,7 +1010,7 @@
 
   <footer class="footer">
     <div class="container footer-grid">
-      <p>&copy; <span id="year">{{ CURRENT_YEAR }}</span> Dr. Agughasi Victor Ikechukwu. All rights reserved.</p>
+      <p>&copy; <span id="year">2026</span> Dr. Agughasi Victor Ikechukwu. All rights reserved.</p>
       <a href="#top">Back to top &uarr;</a>
     </div>
   </footer>
@@ -618,6 +1027,6 @@
     </div>
   </div>
 
-  <script src="{{ SITEURL }}/theme/js/script.js?v=20260609b"></script>
+  <script src="./theme/js/script.js?v=20260609b"></script>
 </body>
 </html>
